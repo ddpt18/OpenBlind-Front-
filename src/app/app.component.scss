@@ -1,0 +1,10 @@
+/* Cuando el sidebar está visible */
+div:not(.no-sidebar) {
+    margin-left: 250px; /* Ajusta según el ancho del sidebar */
+  }
+  
+  /* Cuando el sidebar no está visible */
+  .no-sidebar {
+    margin-left: 0;
+  }
+  
