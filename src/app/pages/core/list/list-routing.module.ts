@@ -11,7 +11,7 @@ const routes: Routes = [
     component: PersonalizedMessageListComponent
   },
   {
-    path: 'point-interest.list',
+    path: 'point-interest-list',
     component: PointInterestListComponent
   },
   {
@@ -19,7 +19,7 @@ const routes: Routes = [
     component: RoutesListComponent
   },
   {
-    path: 'voice.guide.list',
+    path: 'voice.guide-list',
     component: VoiceGuideListComponent
   }
 ];
