@@ -1,1 +1,55 @@
-<p>routes works!</p>
+<div class="grid-container">
+    <div class="grid-item"></div> <!-- Columna vacía -->
+    <div class="grid-item"></div> <!-- Otra columna vacía -->
+    <div class="grid-item content">
+      <div class="top-bar">
+        <div class="logo">OpenBlind</div>
+        <div class="search-container">
+          <input type="text" class="search-input" placeholder="Buscar...">
+        </div>
+        <div class="alert-icon">🔔</div>
+        <div class="user-info">
+          <span class="user-icon">👤</span>
+          <span class="user-name">Gonzalo Ramos</span>
+        </div>
+      </div>
+      <div class="route-registration-container">
+        <h2>Registro de Rutas</h2>
+        <div class="form-image-container">
+            <form (ngSubmit)="onSubmit()" #routeForm="ngForm" class="form-column">
+                <div class="form-group">
+                  <label for="name">Nombre de la ruta: <span class="required">*</span></label>
+                  <input type="text" id="name" required [(ngModel)]="route.name" name="name" #name="ngModel" class="form-control">
+                  <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error">
+                    El nombre es obligatorio.
+                  </div>
+                </div>
+              
+                <div class="form-group">
+                  <label for="location">Ubicación de la ruta: <span class="required">*</span></label>
+                  <input type="text" id="location" required [(ngModel)]="route.location" name="location" #location="ngModel" class="form-control">
+                  <div *ngIf="location.invalid && (location.dirty || location.touched)" class="error">
+                    La ubicación es obligatoria.
+                  </div>
+                </div>
+              
+                <div class="form-group">
+                  <label for="transportName">Nombre del transporte que pasa por la ruta: <span class="required">*</span></label>
+                  <input type="text" id="transportName" required [(ngModel)]="route.transportName" name="transportName" #transportName="ngModel" class="form-control">
+                  <div *ngIf="transportName.invalid && (transportName.dirty || transportName.touched)" class="error">
+                    El nombre del transporte es obligatorio.
+                  </div>
+                </div>
+              
+                <button type="submit" [disabled]="routeForm.invalid" class="btn btn-primary">Registrar</button>
+              </form>
+              
+          <div class="image-column">
+            <img src="https://scontent.fuio19-1.fna.fbcdn.net/v/t39.30808-6/462894766_8485911838162379_5483665370365171601_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=xIXRr4Jt77oQ7kNvgEGSJ89&_nc_zt=23&_nc_ht=scontent.fuio19-1.fna&_nc_gid=AhyjvqnYgmz5dqO5t8a8jvi&oh=00_AYC5c_Kd0RmERfzLYWH6p6MA2gAxDP-V4eDkZ4jzCsBcIQ&oe=678F0A5C" alt="Imagen de ejemplo">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-item"></div> <!-- Otra columna vacía para la décima columna -->
+  </div>
+  

@@ -11,6 +11,7 @@ import { PersonalizedMessageComponent } from './personalized-message/personalize
 import { PointInterestComponent } from './point-interest/point-interest.component';
 import { RoutesComponent } from './routes/routes.component';
 import { VoiceGuideComponent } from './voice-guide/voice-guide.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -28,7 +29,8 @@ import { VoiceGuideComponent } from './voice-guide/voice-guide.component';
   ],
   imports: [
     CommonModule,
-    CoreRoutingModule
+    CoreRoutingModule,
+    FormsModule
   ]
 })
 export class CoreModule { }
