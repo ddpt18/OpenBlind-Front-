@@ -147,3 +147,111 @@
 .btn:disabled {
   background-color: #ccc;
 }
+
+/* Media Queries para hacerlo responsive */
+
+@media (max-width: 1200px) {
+  .grid-container {
+    grid-template-columns: repeat(8, 1fr); /* 8 columnas en pantallas medianas */
+  }
+
+  .top-bar {
+    grid-template-columns: repeat(6, 1fr); /* Menos columnas para pantallas medianas */
+  }
+
+  .top-bar .search-container {
+    grid-column: 4 / 5; /* Ajuste para que el buscador esté en la cuarta columna */
+  }
+
+  .route-registration-container {
+    padding: 12px; /* Menos padding */
+  }
+
+  .form-image-container {
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas para pantallas medianas */
+  }
+
+  .form-column {
+    grid-column: 1 / 3; /* Menos columnas para formularios */
+  }
+
+  .image-column {
+    grid-column: 3 / 5; /* Ajusta la imagen */
+  }
+
+  .top-bar .logo {
+    font-size: 1.2em; /* Reduce el tamaño del logo */
+  }
+}
+
+@media (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: repeat(6, 1fr); /* 6 columnas en pantallas pequeñas */
+  }
+
+  .top-bar {
+    grid-template-columns: repeat(4, 1fr); /* Barra superior con menos columnas */
+  }
+
+  .top-bar .search-container {
+    grid-column: 3 / 4; /* Cambia el buscador */
+  }
+
+  .route-registration-container {
+    width: 95%; /* Reduces el ancho del contenedor */
+    margin: 10px auto; /* Ajusta el margen */
+  }
+
+  .form-image-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas para pantallas más pequeñas */
+  }
+
+  .form-column {
+    grid-column: 1 / 3; /* Ajusta las columnas del formulario */
+  }
+
+  .image-column {
+    grid-column: 3 / 4; /* Ajusta la imagen */
+  }
+
+  .top-bar .logo {
+    font-size: 1em; /* Reduce aún más el logo */
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Una sola columna */
+  }
+
+  .top-bar {
+    grid-template-columns: 1fr; /* Barra superior en una sola columna */
+  }
+
+  .top-bar .search-container {
+    grid-column: 1; /* El buscador ocupará toda la barra superior */
+    margin-top: 10px;
+  }
+
+  .route-registration-container {
+    width: 100%; /* Contenedor a pantalla completa */
+    margin: 10px 0; /* Ajuste de márgenes */
+  }
+
+  .form-image-container {
+    grid-template-columns: 1fr; /* Solo una columna */
+  }
+
+  .form-column,
+  .image-column {
+    grid-column: 1; /* Todo en una sola columna */
+  }
+
+  .top-bar .logo {
+    font-size: 1.2em; /* Ajuste del tamaño del logo */
+  }
+
+  .btn {
+    width: 100%; /* Botón ocupa todo el ancho */
+  }
+}
