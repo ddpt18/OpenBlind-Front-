@@ -1,0 +1,23 @@
+.container {
+    margin-top: 20px;
+  }
+  
+  .table {
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  .odd-row {
+    background-color: black;
+    color: white;
+  }
+  
+  .btn-primary {
+    display: flex;
+    align-items: center;
+  }
+  
+  .btn-primary img {
+    margin-right: 5px;
+  }
+  
