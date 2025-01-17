@@ -4,10 +4,11 @@ import { PersonalizedMessageListComponent } from './personalized-message-list/pe
 import { RoutesListComponent } from './routes-list/routes-list.component';
 import { PointInterestListComponent } from './point-interest-list/point-interest-list.component';
 import { VoiceGuideListComponent } from './voice-guide-list/voice-guide-list.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 const routes: Routes = [
   {
-    path: 'personalized-list',
+    path: 'message-personalized-list',
     component: PersonalizedMessageListComponent
   },
   {
@@ -19,8 +20,12 @@ const routes: Routes = [
     component: RoutesListComponent
   },
   {
-    path: 'voice.guide-list',
+    path: 'voice-guide-list',
     component: VoiceGuideListComponent
+  },
+  {
+    path: 'user-list',
+    component: UserListComponent
   }
 ];
 

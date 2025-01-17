@@ -1,8 +1,10 @@
 <div *ngIf="mostrarSidebar">
-    <app-sidebar></app-sidebar>
-  </div>
-  <div [class.no-sidebar]="!mostrarSidebar">
-    <router-outlet></router-outlet>
-  </div>
-  
-<router-outlet />
+  <app-sidebar></app-sidebar>
+</div>
+<div [class.no-sidebar]="!mostrarSidebar">
+  <!-- Navbar: se mostrará en todas las pantallas excepto en login y registro -->
+  <app-navbar *ngIf="mostrarNavbar"></app-navbar>
+
+  <!-- Contenido de las rutas -->
+  <router-outlet></router-outlet>
+</div>
