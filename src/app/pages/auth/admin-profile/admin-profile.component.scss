@@ -1,0 +1,56 @@
+/* Agregar un margen en la parte superior para el contenedor */
+.container {
+  margin-top: 20px;
+}
+
+/* Ajustar el ancho de la tabla */
+.table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Estilo para las filas impares (filas alternas) */
+.odd-row {
+  background-color: black;
+  color: white;
+}
+
+/* Estilo para el botón principal */
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Asegura que el contenido esté centrado */
+  width: 100%; /* Hace que el botón ocupe todo el ancho de su columna */
+}
+
+/* Asegurar que la imagen dentro del botón esté correctamente alineada */
+.btn-primary img {
+  margin-right: 8px;
+  width: 25px; /* Tamaño ajustado para pantallas pequeñas */
+  height: 25px;
+}
+
+/* Media Query para dispositivos pequeños */
+@media (max-width: 768px) {
+  .container {
+    margin-top: 15px; /* Menos margen superior en pantallas pequeñas */
+  }
+
+  /* Asegura que el botón no se extienda completamente en pantallas pequeñas */
+  .btn-primary {
+    width: auto; /* Evita que el botón ocupe todo el ancho en pantallas pequeñas */
+    padding: 8px 16px; /* Agrega un poco de relleno para hacer el botón más compacto */
+  }
+
+  /* Hace que la imagen del botón sea más pequeña en pantallas pequeñas */
+  .btn-primary img {
+    width: 20px; /* Reducir tamaño en pantallas más pequeñas */
+    height: 20px;
+  }
+
+  /* Ajusta las columnas de la fila 2 para pantallas pequeñas */
+  .col-md-4, .col-md-5, .col-md-2 {
+    flex: 0 0 100%; /* Hace que las columnas se apilen verticalmente */
+    max-width: 100%; /* Asegura que las columnas se ajusten al 100% del contenedor */
+  }
+}
