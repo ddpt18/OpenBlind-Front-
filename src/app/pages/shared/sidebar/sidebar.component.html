@@ -53,12 +53,9 @@
         <span class="d-inline-block">
           <i class="bi bi-mic"></i> Guía de Voz
         </span>
-        <i class="bi bi-chevron-down float-end rotate-icon" [ngClass]="{'rotate': !isCollapsedGuia}"></i>
       </a>
-      <div class="collapse-content" [class.show]="!isCollapsedGuia">
-        <a (click)="onHistorialGuiaClick($event)" href="/core/list/voice-guide-list" class="nav-link ps-4">Historial de Guía de Voz</a>
-      </div>
     </div>
+    
     
     <div class="nav-item">
       <a href="/core/list/user-list" class="nav-link"><i class="bi bi-people"></i> Historial de Usuarios</a>

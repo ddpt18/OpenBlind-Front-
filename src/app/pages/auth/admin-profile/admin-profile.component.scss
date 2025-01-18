@@ -1,56 +1,69 @@
-/* Agregar un margen en la parte superior para el contenedor */
-.container {
-  margin-top: 20px;
+/* Imagen de perfil */
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border: 4px solid #01072b;
+  object-fit: cover;
+  margin-top: 35px; /* Baja la imagen */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Ajustar el ancho de la tabla */
-.table {
-  width: 100%;
-  table-layout: fixed;
+.profile-img:hover {
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Agrega una sombra */
 }
 
-/* Estilo para las filas impares (filas alternas) */
-.odd-row {
-  background-color: black;
-  color: white;
-}
-
-/* Estilo para el botón principal */
-.btn-primary {
-  display: flex;
+/* Botón */
+.btn-gradient {
+  background: linear-gradient(to right, #010429, #13003f);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  transition: 0.3s;
+  display: inline-flex; /* Asegura que el contenido del botón esté centrado */
   align-items: center;
-  justify-content: center; /* Asegura que el contenido esté centrado */
-  width: 100%; /* Hace que el botón ocupe todo el ancho de su columna */
+  justify-content: center;
+  margin-top: 15px; /* Espaciado entre la imagen y el botón */
+  margin-left: 110px;
 }
 
-/* Asegurar que la imagen dentro del botón esté correctamente alineada */
-.btn-primary img {
+.btn-gradient:hover {
+  background: linear-gradient(to right, #bcd5ff, #d8c4ee);
+}
+
+/* Icono dentro del botón */
+.btn-icon {
+  font-size: 20px;
   margin-right: 8px;
-  width: 25px; /* Tamaño ajustado para pantallas pequeñas */
-  height: 25px;
 }
 
-/* Media Query para dispositivos pequeños */
+/* Fondo de tarjetas */
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.card-header {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: #fff;
+}
+
+.list-group-item {
+  border: none;
+  font-size: 16px;
+}
+
+.list-group-item.bg-primary {
+  font-weight: bold;
+  background-color: #6a11cb;
+  color: #fff;
+}
+
+/* Centrado del botón en dispositivos pequeños */
 @media (max-width: 768px) {
-  .container {
-    margin-top: 15px; /* Menos margen superior en pantallas pequeñas */
-  }
-
-  /* Asegura que el botón no se extienda completamente en pantallas pequeñas */
-  .btn-primary {
-    width: auto; /* Evita que el botón ocupe todo el ancho en pantallas pequeñas */
-    padding: 8px 16px; /* Agrega un poco de relleno para hacer el botón más compacto */
-  }
-
-  /* Hace que la imagen del botón sea más pequeña en pantallas pequeñas */
-  .btn-primary img {
-    width: 20px; /* Reducir tamaño en pantallas más pequeñas */
-    height: 20px;
-  }
-
-  /* Ajusta las columnas de la fila 2 para pantallas pequeñas */
-  .col-md-4, .col-md-5, .col-md-2 {
-    flex: 0 0 100%; /* Hace que las columnas se apilen verticalmente */
-    max-width: 100%; /* Asegura que las columnas se ajusten al 100% del contenedor */
+  .btn-gradient {
+    margin: 0 auto; /* Centra el botón en pantallas pequeñas */
+    display: block;
   }
 }

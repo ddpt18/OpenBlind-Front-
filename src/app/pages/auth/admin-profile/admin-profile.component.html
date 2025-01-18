@@ -1,67 +1,42 @@
 <div class="container">
-    <!-- Fila 1: Vacía -->
-    <div class="row mb-4">
-      <div class="col-12">
-        <!-- Espacio vacío -->
-      </div>
+  <!-- Fila 1: Imagen de Perfil -->
+  <div class="row justify-content-center">
+    <div class="col-md-4 text-center">
+      <img src="assets/images/descarga (1).jpeg" class="img-fluid profile-img rounded-circle shadow-lg" alt="Imagen de perfil">
+      <button class="btn btn-gradient d-flex align-items-center justify-content-center mt-2">
+        <i class="fas fa-pencil-alt btn-icon"></i> Editar Perfil
+      </button>
     </div>
-  
-    <!-- Fila 2: Imagen, Tabla y Botón paralelos -->
-    <div class="row align-items-center">
-      <!-- Columna 1: Vacía -->
-      <div class="col-md-1">
-        <!-- Espacio vacío -->
-      </div>
-  
-      <!-- Columna 2: Imagen -->
-      <div class="col-md-4">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcCmZdWFo8NTJllIaJNOwpJjyoNL4EqIV9Fw&s" class="img-fluid rounded-circle" alt="Imagen de perfil">
-      </div>
-  
-      <!-- Columna 3: Tabla -->
-      <div class="col-md-5">
-        <ul class="list-group">
-          <!-- Fondo negro con texto blanco -->
-          <li class="list-group-item bg-dark text-white"><strong>Rol</strong></li>
-          <li class="list-group-item">{{ profile.rol }}</li>
-          <li class="list-group-item bg-dark text-white"><strong>Email</strong></li>
-          <li class="list-group-item">{{ profile.email }}</li>
-          <li class="list-group-item bg-dark text-white"><strong>Teléfono</strong></li>
-          <li class="list-group-item">{{ profile.telefono }}</li>
-        </ul>
-      </div>
-  
-      <!-- Columna 4: Botón Editar Perfil -->
-      <div class="col-md-2 text-center">
-        <button class="btn btn-primary d-flex align-items-center justify-content-center">
-          <img src="data:image/png;base64,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" alt="Editar" style="width: 30px; height: 30px; margin-right: 10px;">
-          Editar Perfil
-        </button>
-      </div>
-    </div>
-  
-    <!-- Fila 3: Detalles adicionales -->
-    <div class="row mt-4">
-      <div class="col-md-12">
-        <div class="col-md-9 offset-md-1">
-          <ul class="list-group">
-            <!-- Fondo negro con texto blanco -->
-            <li class="list-group-item bg-dark text-white"><strong>Nombres</strong></li>
-            <li class="list-group-item">{{ profile.nombres }}</li>
-            <li class="list-group-item bg-dark text-white"><strong>Apellidos</strong></li>
-            <li class="list-group-item">{{ profile.apellidos }}</li>
-            <li class="list-group-item bg-dark text-white"><strong>Fecha de Nacimiento</strong></li>
-            <li class="list-group-item">{{ profile.fechaNacimiento }}</li>
-          </ul>
+  </div>
+
+  <!-- Fila 2: Información Personal -->
+  <div class="row mt-5">
+    <div class="col-md-10 offset-md-1">
+      <div class="card shadow-lg">
+        <div class="card-header bg-gradient text-white text-center">
+          <h4>Información del Usuario</h4>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <!-- Columna 1: Detalles Personales -->
+            <div class="col-md-6">
+              <ul class="list-group">
+                <li class="list-group-item bg-primary text-white"><strong>Nombres:</strong> {{ profile.nombres }}</li>
+                <li class="list-group-item"><strong>Apellidos:</strong> {{ profile.apellidos }}</li>
+                <li class="list-group-item bg-primary text-white"><strong>Fecha de Nacimiento:</strong> {{ profile.fechaNacimiento }}</li>
+              </ul>
+            </div>
+            <!-- Columna 2: Contacto -->
+            <div class="col-md-6">
+              <ul class="list-group">
+                <li class="list-group-item bg-primary text-white"><strong>Email:</strong> {{ profile.email }}</li>
+                <li class="list-group-item"><strong>Teléfono:</strong> {{ profile.telefono }}</li>
+                <li class="list-group-item bg-primary text-white"><strong>Rol:</strong> {{ profile.rol }}</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  
-    <!-- Fila 4: Vacía -->
-    <div class="row mb-4">
-      <div class="col-12">
-        <!-- Espacio vacío -->
-      </div>
-    </div>
   </div>
-  
+</div>

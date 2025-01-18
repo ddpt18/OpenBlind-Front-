@@ -1,120 +1,110 @@
-<div class="container-fluid mt-5 ">
-    <div class="row justify-content-center">
-      <div class="col-md-10">
-        <div class="card shadow-lg">
-          <div class="card-header text-center">
-            <h3>Registro de Guía de Voz</h3>
+<div class="container">
+  <div class="header">
+    <p class="d-inline-flex gap-1">
+      <a href="/core/routesx" class="btn" role="button" data-bs-toggle="button">Agregar uno nuevo <i class="bi bi-lock"></i></a>
+    </p>
+    <div class="search-container">
+      <input type="text" class="form-control" placeholder="Buscar en la lista" />
+      <i class="bi bi-search"></i>
+    </div>
+  </div>
+
+  <h2 class="title">Lista de Guía de Voz </h2>
+
+  <div class="row">
+    <!-- Primera ruta -->
+    <div class="col-md-4">
+      <div class="card custom-card">
+        <div class="card-body">
+          <h5 class="card-title">Mapa de la ruta creada:</h5>
+          <p class="card-text">
+          <img src="assets/images/Captura.PNG" alt="Bus Tipo Bellavista" class="img-fluid" />
+          </p>
+
+          <h5 class="card-title">Mensaje personalizado de la ruta:</h5>
+          <p class="card-text">https://www.youtube.com/</p>
+
+          <h5 class="card-title">Estado:</h5>
+          <p class="card-text">Activo</p>
+
+          <h5 class="card-title">Fecha de registro:</h5>
+          <p class="card-text">11-01-2025</p>
+
+          <div class="buttons">
+            <a href="#" class="btn btn-sm btn-danger animated-button">Eliminar</a>
           </div>
-          <div class="card-body">
-            <div class="row">
-              <!-- Formulario -->
-              <div class="col-lg-7">
-                <form>
-                  <div class="mb-3">
-                    <label for="descripcion" class="form-label">
-                      Descripción <span class="text-danger">*</span>
-                    </label>
-                    <div class="input-group">
-                      <input
-                        type="text"
-                        id="descripcion"
-                        class="form-control"
-                        placeholder="Descripción"
-                        required
-                      />
-                      <span class="input-group-text">
-                        <i class="fas fa-pencil-alt"></i>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="mb-3">
-                    <label for="audio-url" class="form-label">
-                      Audio URL <span class="text-danger">*</span>
-                    </label>
-                    <div class="input-group">
-                      <input
-                        type="url"
-                        id="audio-url"
-                        class="form-control"
-                        placeholder="Audio URL"
-                        required
-                      />
-                      <span class="input-group-text">
-                        <i class="fas fa-link"></i>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="mb-3">
-                    <label for="estado" class="form-label">
-                      Estado <span class="text-danger">*</span>
-                    </label>
-                    <div class="input-group">
-                      <select id="estado" class="form-select" required>
-                        <option value="" disabled selected>Estado</option>
-                        <option value="activo">Activo</option>
-                        <option value="inactivo">Inactivo</option>
-                      </select>
-                      <span class="input-group-text">
-                        <i class="fas fa-toggle-on"></i>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="mb-3">
-                    <label for="fecha" class="form-label">
-                      Fecha de registro <span class="text-danger">*</span>
-                    </label>
-                    <div class="input-group">
-                      <input
-                        type="date"
-                        id="fecha"
-                        class="form-control"
-                        required
-                      />
-                      <span class="input-group-text">
-                        <i class="fas fa-calendar-alt"></i>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="mb-3">
-                    <label for="ubicacion" class="form-label">
-                      Agrega la ubicación en el mapa
-                    </label>
-                    <div class="input-group">
-                      <input
-                        type="text"
-                        id="ubicacion"
-                        class="form-control"
-                        placeholder="Ubicación"
-                      />
-                      <span class="input-group-text">
-                        <i class="fas fa-map-marker-alt"></i>
-                      </span>
-                    </div>
-                  </div>
-                  <a href="/core/list/voice-guide-list" class="btn btn-primary w-100">
-                    Registrar
-                  </a>
-                  
-                </form>
-              </div>
-              <!-- Mapa -->
-              <div class="col-lg-5 d-flex align-items-center justify-content-center">
-                <img
-                  src="https://e.rpp-noticias.io/xlarge/2020/03/09/332233_911169.jpg"
-                  alt="Mapa"
-                  class="img-fluid rounded shadow-lg custom-map-height"
-                />
-              </div>
-            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Segunda ruta -->
+    <div class="col-md-4">
+      <div class="card custom-card">
+        <div class="card-body">
+          <h5 class="card-title">Mapa de la ruta creada:</h5>
+          <p class="card-text">
+          <img src="assets/images/Captura.PNG" alt="Bus Tipo Bellavista" class="img-fluid" />
+          </p>
+          <h5 class="card-title">Mensaje personalizado de la ruta:</h5>
+          <p class="card-text">https://www.youtube.com/</p>
+
+          <h5 class="card-title">Estado:</h5>
+          <p class="card-text">Activo</p>
+
+          <h5 class="card-title">Fecha de registro:</h5>
+          <p class="card-text">11-01-2025</p>
+
+          <div class="buttons">
+            <a href="#" class="btn btn-sm btn-danger animated-button">Eliminar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tercera ruta -->
+    <div class="col-md-4">
+      <div class="card custom-card">
+        <div class="card-body">
+          <h5 class="card-title">Mapa de la ruta creada:</h5>
+          <p class="card-text">
+          <img src="assets/images/Captura.PNG" alt="Bus Tipo Bellavista" class="img-fluid" />
+          </p>
+
+          <h5 class="card-title">Mensaje personalizado de la ruta:</h5>
+          <p class="card-text">https://www.youtube.com/</p>
+
+          <h5 class="card-title">Estado:</h5>
+          <p class="card-text">Activo</p>
+
+          <h5 class="card-title">Fecha de registro:</h5>
+          <p class="card-text">11-01-2025</p>
+
+          <div class="buttons">
+            <a href="#" class="btn btn-sm btn-danger animated-button">Eliminar</a>
+            <!-- Botón Agregar Mensaje Personalizado -->
           </div>
         </div>
       </div>
     </div>
   </div>
-  
-  <!-- Iconos de Font Awesome -->
-  <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    rel="stylesheet"
-  />
-  
+
+  <!-- Paginación más abajo -->
+  <nav aria-label="Page navigation">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#">4</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
