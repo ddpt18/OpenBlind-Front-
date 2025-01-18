@@ -1,1 +1,68 @@
-<p>register works!</p>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Blind - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="register.component.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <img class="persona"
+            src="https://png.pngtree.com/png-clipart/20230923/original/pngtree-assisting-blind-patient-with-cane-medical-aid-vision-walk-see-vector-png-image_12550559.png"
+            alt="Persona ciega asistida por un guía" />
+        <div class="form-container">
+            <div class="titulo">
+                <img class="ojo" src="https://i.gifer.com/Bpa1.gif" alt="Descripción del GIF" />
+                <h1 class="logo">OPEN BLIND</h1>
+            </div>
+            <p class="tagline">Navega con Confianza, Alcanzando Libertad</p>
+            <form class="login-form">
+                <div class="input-group">
+                    <label for="nombres">Nombres</label>
+                    <div class="bordenombre">
+                        <br><input type="nombre" id="nombre" placeholder="Ingrese sus nombres" required />
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="apellidos">Apellidos</label>
+                    <div class="bordenombre">
+                        <br><input type="apellido" id="apellido" placeholder="Ingrese sus apellidos" required />
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="email">Correo Electrónico</label>
+                    <div class="borde">
+                        <br><input type="correo" id="correo" placeholder="Ingrese su correo electronico" required />
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="password">Contraseña</label>
+                    <div class="bordecontraseña">
+                        <br><input type="contraseña" id="contraseña" placeholder="Ingrese su contraseña" required />
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="celular">N Celular</label>
+                    <div class="bordenombre">
+                        <br><input type="celular" id="celular" placeholder="Ingrese su numero celular" required />
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="fecha de nacimiento">Fecha de nacimiento</label>
+                    <div class="bordefecha">
+                        <input type="date" id="fecha" name="fecha" required />
+                    </div>
+                </div>
+                <button routerLink='/auth/login' type="button" class="btn">Registrarme</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

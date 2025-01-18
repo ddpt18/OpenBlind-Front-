@@ -9,9 +9,9 @@ import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 
 @NgModule({
   declarations: [
-    LoginComponent,
     RegisterComponent,
-    AdminProfileComponent
+    LoginComponent,
+    AdminProfileComponent,
   ],
   imports: [
     CommonModule,
