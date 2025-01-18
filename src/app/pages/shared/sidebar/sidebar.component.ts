@@ -29,13 +29,13 @@ export class SidebarComponent {
 
   onPuntosClick(event: Event): void {
     event.preventDefault();
-    this.router.navigate(['/core/point-interest']);
+    this.router.navigate(['/core/tourist-registration']);
     this.toggleCollapse('Puntos');
   }
 
   onHistorialPuntosClick(event: Event): void {
     event.preventDefault();
-    this.router.navigate(['/core/list/point-interest-list']);
+    this.router.navigate(['/core/list/tourist-register-list']);
   }
 
   onGuiaClick(event: Event): void {

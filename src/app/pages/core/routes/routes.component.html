@@ -1,43 +1,86 @@
-<div class="container">
-  <!-- Primera fila vacía -->
-  <div class="row" style="height: 50px;"></div>
-  
-  <!-- Segunda fila con contenido -->
+<div class="container-fluid mt-5">
   <div class="row justify-content-center">
-    <div class="col-10">
-      <div class="route-registration-container">
-        <h2>Registro de Rutas</h2>
-        <div class="form-image-container">
-          <form (ngSubmit)="onSubmit()" #routeForm="ngForm" class="form-column">
-            <div class="form-group">
-              <label for="name">Nombre de la ruta: <span class="required">*</span></label>
-              <input type="text" id="name" required [(ngModel)]="route.name" name="name" #name="ngModel" class="form-control">
-              <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error">
-                El nombre es obligatorio.
-              </div>
+    <div class="col-md-10">
+      <div class="card shadow-lg">
+        <div class="card-header text-center">
+          <h3>Registro de Rutas</h3>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <!-- Formulario -->
+            <div class="col-lg-7">
+              <form>
+                <div class="mb-3">
+                  <label for="nombre-ruta" class="form-label">
+                    Nombre de la ruta <span class="text-danger">*</span>
+                  </label>
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      id="nombre-ruta"
+                      class="form-control"
+                      placeholder="Nombre de la ruta"
+                      required
+                    />
+                    <span class="input-group-text">
+                      <i class="fas fa-route"></i>
+                    </span>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="ubicacion-ruta" class="form-label">
+                    Ubicación de la ruta <span class="text-danger">*</span>
+                  </label>
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      id="ubicacion-ruta"
+                      class="form-control"
+                      placeholder="Ubicación de la ruta"
+                      required
+                    />
+                    <span class="input-group-text">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </span>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="nombre-transporte" class="form-label">
+                    Nombre del transporte que pasa por la ruta <span class="text-danger">*</span>
+                  </label>
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      id="nombre-transporte"
+                      class="form-control"
+                      placeholder="Nombre del transporte que pasa por la ruta"
+                      required
+                    />
+                    <span class="input-group-text">
+                      <i class="fas fa-bus"></i>
+                    </span>
+                  </div>
+                </div>
+                <a href="/core/list/routes-list" class="btn btn-primary w-100">
+                  Registrar
+                </a>
+              </form>
             </div>
-          
-            <div class="form-group">
-              <label for="location">Ubicación de la ruta: <span class="required">*</span></label>
-              <input type="text" id="location" required [(ngModel)]="route.location" name="location" #location="ngModel" class="form-control">
-              <div *ngIf="location.invalid && (location.dirty || location.touched)" class="error">
-                La ubicación es obligatoria.
-              </div>
-            </div>
-          
-            <div class="form-group">
-              <label for="transportName">Nombre del transporte que pasa por la ruta: <span class="required">*</span></label>
-              <input type="text" id="transportName" required [(ngModel)]="route.transportName" name="transportName" #transportName="ngModel" class="form-control">
-              <div *ngIf="transportName.invalid && (transportName.dirty || transportName.touched)" class="error">
-                El nombre del transporte es obligatorio.
-              </div>
-            </div>
-          
-            <button type="submit" [disabled]="routeForm.invalid" class="btn btn-primary" style="background-color: #5A7EDA;">Registrar</button>
-          </form>
-          
-          <div class="image-column">
-            <img src="https://scontent.fuio19-1.fna.fbcdn.net/v/t39.30808-6/462894766_8485911838162379_5483665370365171601_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=xIXRr4Jt77oQ7kNvgEGSJ89&_nc_zt=23&_nc_ht=scontent.fuio19-1.fna&_nc_gid=AhyjvqnYgmz5dqO5t8a8jvi&oh=00_AYC5c_Kd0RmERfzLYWH6p6MA2gAxDP-V4eDkZ4jzCsBcIQ&oe=678F0A5C" alt="Imagen de ejemplo">
+            <!-- imagen -->
+            <div class="col-lg-5 d-flex align-items-center justify-content-center">
+  <a 
+    href="https://pasajeros.quito.gob.ec/wp-content/uploads/2024/08/Mapa_SIT_2023.jpg" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    <img
+      src="https://pasajeros.quito.gob.ec/wp-content/uploads/2024/08/Mapa_SIT_2023.jpg"
+      alt="Mapa"
+      class="img-fluid rounded shadow-lg custom-map-height"
+    />
+  </a>
+</div>
+
           </div>
         </div>
       </div>
@@ -45,6 +88,8 @@
   </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Iconos de Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  rel="stylesheet"
+/>

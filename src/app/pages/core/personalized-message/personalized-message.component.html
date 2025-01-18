@@ -1,1 +1,75 @@
-<p>personalized-message works!</p>
+<div class="container-fluid mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="card shadow-lg">
+          <div class="card-header text-center">
+            <h3>Registro de Mensajes Personalizados</h3>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <!-- Formulario -->
+              <div class="col-lg-7">
+                <form>
+                  <!-- Campo para Mensaje -->
+                  <div class="mb-3">
+                    <label for="mensaje" class="form-label">
+                      Mensaje <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        id="mensaje"
+                        class="form-control"
+                        placeholder="Escribe tu mensaje"
+                        required
+                      />
+                      <span class="input-group-text">
+                        <i class="fas fa-comment-dots"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <!-- Campo para Estado -->
+                  <div class="mb-3">
+                    <label for="estado" class="form-label">
+                      Estado <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        id="estado"
+                        class="form-control"
+                        placeholder="Escribe el estado"
+                        required
+                      />
+                      <span class="input-group-text">
+                        <i class="fas fa-info-circle"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <!-- Botón Registrar -->
+                  <a href="/core/list/message-personalized-list" class="btn btn-primary w-100">
+                    Registrar
+                  </a>
+                </form>
+              </div>
+              <!-- Imagen -->
+              <div class="col-lg-5 d-flex align-items-center justify-content-center">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb3SoyqJrklEMtg4r-P0eUfWXYdrXspuN5mg&s"
+                    alt="Mapa"
+                    class="img-fluid rounded shadow-lg custom-map-height"
+                  />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Iconos de Font Awesome -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    rel="stylesheet"
+  />
+  

@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PersonalizedMessageComponent } from './personalized-message/personalized-message.component';
-import { PointInterestComponent } from './point-interest/point-interest.component';
 import { RoutesComponent } from './routes/routes.component';
 import { VoiceGuideComponent } from './voice-guide/voice-guide.component';
+import { TouristRegistrationComponent } from './tourist-registration/tourist-registration.component';
 
 const routes: Routes = [
   {
@@ -20,8 +20,8 @@ const routes: Routes = [
     component: PersonalizedMessageComponent
   },
   {
-    path: 'point-interest',
-    component: PointInterestComponent
+    path: 'tourist-registration',
+    component: TouristRegistrationComponent
   },
   {
     path: 'routes',

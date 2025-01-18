@@ -1,1 +1,120 @@
-<p>voice-guide works!</p>
+<div class="container-fluid mt-5 ">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="card shadow-lg">
+          <div class="card-header text-center">
+            <h3>Registro de Guía de Voz</h3>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <!-- Formulario -->
+              <div class="col-lg-7">
+                <form>
+                  <div class="mb-3">
+                    <label for="descripcion" class="form-label">
+                      Descripción <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        id="descripcion"
+                        class="form-control"
+                        placeholder="Descripción"
+                        required
+                      />
+                      <span class="input-group-text">
+                        <i class="fas fa-pencil-alt"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="audio-url" class="form-label">
+                      Audio URL <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-group">
+                      <input
+                        type="url"
+                        id="audio-url"
+                        class="form-control"
+                        placeholder="Audio URL"
+                        required
+                      />
+                      <span class="input-group-text">
+                        <i class="fas fa-link"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="estado" class="form-label">
+                      Estado <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-group">
+                      <select id="estado" class="form-select" required>
+                        <option value="" disabled selected>Estado</option>
+                        <option value="activo">Activo</option>
+                        <option value="inactivo">Inactivo</option>
+                      </select>
+                      <span class="input-group-text">
+                        <i class="fas fa-toggle-on"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="fecha" class="form-label">
+                      Fecha de registro <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-group">
+                      <input
+                        type="date"
+                        id="fecha"
+                        class="form-control"
+                        required
+                      />
+                      <span class="input-group-text">
+                        <i class="fas fa-calendar-alt"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="ubicacion" class="form-label">
+                      Agrega la ubicación en el mapa
+                    </label>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        id="ubicacion"
+                        class="form-control"
+                        placeholder="Ubicación"
+                      />
+                      <span class="input-group-text">
+                        <i class="fas fa-map-marker-alt"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <a href="/core/list/voice-guide-list" class="btn btn-primary w-100">
+                    Registrar
+                  </a>
+                  
+                </form>
+              </div>
+              <!-- Mapa -->
+              <div class="col-lg-5 d-flex align-items-center justify-content-center">
+                <img
+                  src="https://e.rpp-noticias.io/xlarge/2020/03/09/332233_911169.jpg"
+                  alt="Mapa"
+                  class="img-fluid rounded shadow-lg custom-map-height"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Iconos de Font Awesome -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    rel="stylesheet"
+  />
+  

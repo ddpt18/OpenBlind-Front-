@@ -39,12 +39,12 @@
     <div class="nav-item">
       <a class="nav-link" href="#" role="button" aria-expanded="false" (click)="onPuntosClick($event)">
         <span class="d-inline-block">
-          <i class="bi bi-geo-alt"></i> Puntos de Interés
+          <i class="bi bi-geo-alt"></i> Registro Turístico
         </span>
         <i class="bi bi-chevron-down float-end rotate-icon" [ngClass]="{'rotate': !isCollapsedPuntos}"></i>
       </a>
       <div class="collapse-content" [class.show]="!isCollapsedPuntos">
-        <a (click)="onHistorialPuntosClick($event)" href="/core/list/point-interest-list" class="nav-link ps-4">Historial de Puntos de Interés</a>
+        <a (click)="onHistorialPuntosClick($event)" href="/core/list/tourist-register-list" class="nav-link ps-4">Historial de Puntos de Interés</a>
       </div>
     </div>
     

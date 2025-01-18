@@ -1,0 +1,107 @@
+<div class="container-fluid mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="card shadow-lg">
+          <div class="card-header text-center">
+            <h3>Registro Turístico</h3>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <!-- Formulario -->
+              <div class="col-lg-7">
+                <form>
+                  <!-- Lugar de destino -->
+                  <div class="mb-3">
+                    <label for="lugar-destino" class="form-label">
+                      Lugar de destino <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        id="lugar-destino"
+                        class="form-control"
+                        placeholder="Lugar de destino"
+                        required
+                      />
+                      <span class="input-group-text">
+                        <i class="fas fa-map-signs"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <!-- Nombre del punto -->
+                  <div class="mb-3">
+                    <label for="nombre-punto" class="form-label">
+                      Nombre <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        id="nombre-punto"
+                        class="form-control"
+                        placeholder="Nombre"
+                        required
+                      />
+                      <span class="input-group-text">
+                        <i class="fas fa-map-marker-alt"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <!-- Descripción -->
+                  <div class="mb-3">
+                    <label for="descripcion" class="form-label">
+                      Descripción <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        id="descripcion"
+                        class="form-control"
+                        placeholder="Descripción"
+                        required
+                      />
+                      <span class="input-group-text">
+                        <i class="fas fa-pencil-alt"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <!-- Ubicación -->
+                  <div class="mb-3">
+                    <label for="ubicacion" class="form-label">Ubicación</label>
+                    <div id="map" class="border rounded" style="height: 300px;"></div>
+                    <input
+                      type="text"
+                      id="ubicacion"
+                      class="form-control mt-2"
+                      placeholder="Coordenadas seleccionadas"
+                      readonly
+                    />
+                  </div>
+                  
+                  <!-- Botón Registrar -->
+                  <a href="/core/list/tourist-register-list" class="btn btn-primary w-100">
+                    Registrar
+                  </a>
+                </form>
+              </div>
+              <!-- Imagen -->
+              <div class="col-lg-5 d-flex align-items-center justify-content-center">
+                <img
+                  src="https://guias-viajar.com/wp-content/uploads/2017/04/quito-iglesia-san-francisco-005.jpg"
+                  alt="Mapa"
+                  class="img-fluid rounded shadow-lg custom-map-height"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Iconos de Font Awesome -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    rel="stylesheet"
+  />
+  
+  
