@@ -36,6 +36,18 @@ body {
     padding: 20px;
 }
 
+.persona {
+    width: 720px;
+    height: 640px;
+    margin: auto auto;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 3s ease-in-out forwards;
+}
+
 .illustration img {
     width: 680px;           
     height: 640px;          

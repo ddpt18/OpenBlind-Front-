@@ -12,10 +12,10 @@
 
 <body>
     <div class="container">
-        <div class="illustration">
-            <img src="https://png.pngtree.com/png-clipart/20230923/original/pngtree-assisting-blind-patient-with-cane-medical-aid-vision-walk-see-vector-png-image_12550559.png"
+        
+            <img class="persona" src="https://png.pngtree.com/png-clipart/20230923/original/pngtree-assisting-blind-patient-with-cane-medical-aid-vision-walk-see-vector-png-image_12550559.png"
                 alt="Persona ciega asistida por un guía" />
-        </div>
+        
         <div class="form-container">
             <div class="titulo">
                 <img class="ojo" src="https://i.gifer.com/Bpa1.gif" alt="Descripción del GIF" />
@@ -39,9 +39,9 @@
                     <input type="checkbox" id="remember-me" />
                     <label for="remember-me">Recordarme</label>
                 </div>
-                <button type="submit" class="btn">Iniciar Sesión</button>
+                <button routerLink='/' type="button" class="btn">Iniciar Sesión</button>
             </form>
-            <p class="register">¿Aún no tienes cuenta? <a href="#">Haz clic aquí para registrarte.</a></p>
+            <p class="register">¿Aún no tienes cuenta? <a href="/auth/register">Haz clic aquí para registrarte.</a></p>
         </div>
     </div>
 </body>
