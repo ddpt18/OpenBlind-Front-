@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-declare let L: any; // Declarar Leaflet para evitar errores de TypeScript
+declare let L: any; 
 
 @Component({
   selector: 'app-tourist-registration',

@@ -8,8 +8,8 @@
     display: flex;
   flex-direction: column;
   height: 100%;
-  overflow-y: auto; /* Desplazamiento interno */
-  padding: 20px; /* Activa desplazamiento solo dentro del contenedor principal */
+  overflow-y: auto; 
+  padding: 20px; 
   }
 
   /* Tarjetas */
@@ -92,6 +92,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
     font-family: Arial, sans-serif;
+    font-size: 0.9rem;
     max-width: 110%;
     max-height: 32%;
     margin-left: -35%;
@@ -99,7 +100,7 @@
   }
   
   .card-calificacion .card-title {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: bold;
     margin-bottom: 15px;
     color: #4985b9;
@@ -138,11 +139,11 @@
   /* Tarjeta Estaciones */
   .card-estaciones {
     max-width: 110%;
-    max-height: 29%;
+    max-height: 32%;
     margin-left: -35%;
     background-color: #ffffff;
     border: 1px solid #00bfff;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     color: #4985b9;
   }
   .card-estaciones .list-group-item img {
@@ -209,16 +210,16 @@
   }
   .card-usuarios .edit-icon {
     position: absolute;
-    top: 50px; /* Ajusta según la distancia desde la parte superior */
-    right: 55px; /* Ajusta según la distancia desde el borde derecho */
-    font-size: 1.2rem; /* Tamaño del ícono */
-    color: gray; /* Color del ícono */
+    top: 50px; 
+    right: 55px; 
+    font-size: 1.2rem; 
+    color: gray; 
     cursor: pointer;
     transition: color 0.3s ease;
   }
   
   .card-usuarios .edit-icon:hover {
-    color: black; /* Cambia el color al pasar el cursor */
+    color: black; 
   }
   /* Animación para las imágenes */
 .card img {
@@ -226,9 +227,9 @@
   }
   
   .card img:hover {
-    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra más pronunciada */
-    opacity: 0.9; /* Reduce ligeramente la opacidad */
+    transform: scale(1.1); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    opacity: 0.9; 
   }
   
   /* Ajustes específicos para imágenes de contactos */
@@ -239,8 +240,8 @@
   
   .card-contactos .list-group-item img:hover,
   .card-usuarios .list-group-item img:hover {
-    transform: rotate(10deg) scale(1.4); /* Rotación y escalado */
-    border-color: #1e90ff; /* Cambia el color del borde */
+    transform: rotate(10deg) scale(1.4); 
+    border-color: #1e90ff; 
   }
   
   /* Para imágenes de estaciones */
@@ -250,7 +251,7 @@
   
   .card-estaciones .list-group-item img:hover {
     transform: scale(1.4);
-    filter: brightness(1.4); /* Aumenta el brillo */
+    filter: brightness(1.4); 
   }
   /* Animación general para las tarjetas (excepto usuarios) */
 .card:not(.card-usuarios) {
@@ -258,21 +259,21 @@
   }
   
   .card:not(.card-usuarios):hover {
-    transform: translateY(-10px); /* Eleva la tarjeta ligeramente */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
   }
   
   /* Animación específica para la tarjeta OpenBlind */
   .card-openblind:hover {
-    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
-    box-shadow: 0 10px 20px rgba(0, 191, 255, 0.5); /* Sombra azul */
+    transform: scale(1.05); 
+    box-shadow: 0 10px 20px rgba(0, 191, 255, 0.5); 
   }
   
   /* Animación específica para la tarjeta Lista de Contactos */
   .card-contactos:hover {
-    transform: scale(1.03) rotate(1deg); /* Escala y ligera rotación */
-    border-color: #1e90ff; /* Cambia el color del borde */
-    box-shadow: 0 6px 12px rgba(70, 130, 180, 0.3); /* Sombra azul */
+    transform: scale(1.03) rotate(1deg); 
+    border-color: #1e90ff; 
+    box-shadow: 0 6px 12px rgba(70, 130, 180, 0.3);
   }
   
   /* Animación específica para la tarjeta Estaciones */
@@ -285,29 +286,7 @@
   /* Animación específica para la tarjeta Calificación */
   .card-calificacion:hover {
     transform: scale(1.08); /* Aumenta el tamaño */
-    box-shadow: 0 12px 24px rgba(255, 255, 255, 0.3); /* Sombra más brillante */
-    background-color: #0d202a; /* Hace que el fondo sea un poco más oscuro */
+    box-shadow: 0 12px 24px rgba(255, 255, 255, 0.3); 
+    background-color: #0d202a; 
   }
   
-  
-  
-
-  /* Responsividad adicional */
-  @media (max-width: 992px) {
-    .card-calificacion,
-    .card-estaciones,
-    .card-usuarios {
-      max-width: 85%;
-      font-size: 0.85rem;
-    }
-  }
-
-  @media (max-width: 576px) {
-    .card-calificacion,
-    .card-estaciones,
-    .card-usuarios {
-      max-width: 100%;
-      font-size: 0.8rem;
-      margin-left: 0;
-    }
-  }
