@@ -6,7 +6,7 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  
+
   <!-- Leaflet CSS -->
   <link
     rel="stylesheet"
@@ -15,6 +15,139 @@
 </head>
 <body>
   <app-root></app-root>
+
+  <div class="container-fluid pt-5 dashboard-container">
+    <div class="row g-4">
+      <!-- Columna Principal -->
+      <div class="col-12 col-lg-8">
+        <!-- Card de OpenBlind -->
+        <div class="card p-4 mb-4 shadow small-card card-openblind">
+          <h4 class="card-title text-primary">OpenBli</h4>
+          <p class="card-text">
+            Desarrollar una plataforma que utilice beacons y tecnología para mejorar la movilidad y el turismo, especialmente para personas con discapacidad visual, y adaptar el sistema para guiar a turistas en ciudades desconocidas.
+          </p>
+          <div class="edit-icon position-absolute">
+            <i class="bi bi-pencil"></i>
+          </div>
+        </div>
+
+        <!-- Card de Lista de Contactos -->
+        <div class="card p-4 mb-4 shadow small-card card-contactos">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="card-title">Lista de Contactos</h5>
+          </div>
+          <div class="search-bar mb-3">
+            <input type="text" class="form-control" placeholder="Buscar">
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item d-flex align-items-center">
+              <img src="https://cdn.pixabay.com/photo/2024/07/22/17/11/elegance-in-profile-8913207_640.png" alt="User" class="rounded-circle me-3">
+              <div>
+                <h6 class="mb-0">Jane Cooper</h6>
+                <small>(270) 555-0117</small>
+              </div>
+              <span class="badge bg-secondary ms-auto">Administrador</span>
+            </li>
+            <li class="list-group-item d-flex align-items-center">
+              <img src="https://static.vecteezy.com/system/resources/previews/043/116/745/non_2x/illustration-of-boy-profile-anime-style-black-silhouette-isolated-on-white-background-free-vector.jpg" alt="User" class="rounded-circle me-3">
+              <div>
+                <h6 class="mb-0">Devon Lane</h6>
+                <small>(386) 555-0181</small>
+              </div>
+              <span class="badge bg-secondary ms-auto">Administrador</span>
+            </li>
+          </ul>
+          <div class="edit-icon position-absolute">
+            <i class="bi bi-pencil"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna Secundaria -->
+      <div class="col-12 col-lg-4">
+        <!-- Card de Calificación -->
+        <div class="card card-calificacion position-relative">
+          <h5 class="card-title">Calificación servicio Metro de Quito</h5>
+          <div class="card-content">
+            <p><strong>Accesibilidad</strong></p>
+            <p><span class="calificacion text-primary">9</span></p>
+            <p>Diciembre 2023</p>
+            <p><span class="calificacion text-danger">9,2</span></p>
+            <p>Enero 2024</p>
+          </div>
+          <div class="edit-icon position-absolute">
+            <i class="bi bi-pencil"></i>
+          </div>
+        </div>
+
+        <br>
+
+        <!-- Card de Usuarios Recientes -->
+        <div class="card p-4 shadow card-usuarios">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="card-title">Usuarios Recientes</h5>
+            <span class="badge bg-success">Actualizado</span>
+            <div class="edit-icon position-absolute">
+              <i class="bi bi-pencil"></i>
+            </div>
+          </div>
+          <!-- Dropdown de usuarios recientes -->
+          <div class="dropdown">
+            <button
+              id="dropdownUsuarios"
+              class="btn btn-primary dropdown-toggle"
+              type="button">
+              Usuarios Recientes
+            </button>
+            <div class="dropdown-menu">
+              <div class="list-group">
+                <div class="list-group-item d-flex align-items-center">
+                  <img src="https://static.vecteezy.com/system/resources/previews/043/116/745/non_2x/illustration-of-boy-profile-anime-style-black-silhouette-isolated-on-white-background-free-vector.jpg" alt="User" class="rounded-circle me-3">
+                  <div>
+                    <h6 class="mb-0">Leo Jacobsen</h6>
+                    <small>24 Ene, 2025</small>
+                  </div>
+                </div>
+                <div class="list-group-item d-flex align-items-center">
+                  <img src="https://cdn.pixabay.com/photo/2024/07/22/17/11/elegance-in-profile-8913207_640.png" alt="User" class="rounded-circle me-3">
+                  <div>
+                    <h6 class="mb-0">Andrea Allen</h6>
+                    <small>24 Ene, 2025</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <br>
+
+        <!-- Card de Estaciones -->
+        <div class="card p-4 mb-4 shadow card-estaciones">
+          <h5 class="card-title">Estaciones</h5>
+          <ul class="list-group">
+            <li class="list-group-item d-flex align-items-center">
+              <img src="https://imagenes.primicias.ec/files/og_thumbnail/uploads/2024/05/25/6651d78b5921f.jpeg" class="rounded-circle me-3">
+              <div>
+                <span>Marión Valverde</span>
+                <small class="text-muted d-block">31 Enero 2024 - 10:00 AM</small>
+              </div>
+            </li>
+            <li class="list-group-item d-flex align-items-center">
+              <img src="https://imagenes.primicias.ec/files/og_thumbnail/uploads/2024/05/25/6651d78b5921f.jpeg" class="rounded-circle me-3">
+              <div>
+                <span>Solanda</span>
+                <small class="text-muted d-block">31 Enero 2024 - 11:00 AM</small>
+              </div>
+            </li>
+          </ul>
+          <div class="edit-icon position-absolute">
+            <i class="bi bi-pencil"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Leaflet JS -->
   <script

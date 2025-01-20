@@ -8,7 +8,7 @@ app.use(express.static(path.join(__dirname, 'dist/open-blind-front')));
 
 // Redirige todas las rutas al archivo index.html
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'core/dashboard'));
+    res.sendFile(path.join(__dirname, 'src/index.html'));
 });
 
 // Usa el puerto asignado por Railway o un puerto local
