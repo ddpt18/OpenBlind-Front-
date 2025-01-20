@@ -1,292 +1,292 @@
-// * {
-//     margin: 0;
-//     padding: 0;
-//   }
+* {
+    margin: 0;
+    padding: 0;
+  }
 
-//   /* Contenedor principal para hacer scroll interno */
-//   .main-container {
-//     display: flex;
-//   flex-direction: column;
-//   height: 100%;
-//   overflow-y: auto; 
-//   padding: 20px; 
-//   }
+  /* Contenedor principal para hacer scroll interno */
+  .main-container {
+    display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto; 
+  padding: 20px; 
+  }
 
-//   /* Tarjetas */
-//   .card {
-//     border: none;
-//     border-radius: 10px;
-//     background: #fff;
-//     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-//     transition: transform 0.3s ease, box-shadow 0.3s ease;
-//   }
+  /* Tarjetas */
+  .card {
+    border: none;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
 
-//   .list-group-item {
-//     border: none;
-//     border-radius: 5px;
-//     background: #f9f9f9;
-//   }
+  .list-group-item {
+    border: none;
+    border-radius: 5px;
+    background: #f9f9f9;
+  }
 
-//   /* Tarjeta OpenBlind */
-//   .card-openblind {
-//     max-width: 60%;
-//     padding: 20px;
-//     margin: auto;
-//     font-size: 0.9rem;
-//     background-color: #0D141A;
-//     border: 1px solid #87cefa;
-//     text-align: center;
-//     color: #e6f7ff;
-//   }
+  /* Tarjeta OpenBlind */
+  .card-openblind {
+    max-width: 60%;
+    padding: 20px;
+    margin: auto;
+    font-size: 0.9rem;
+    background-color: #0D141A;
+    border: 1px solid #87cefa;
+    text-align: center;
+    color: #e6f7ff;
+  }
 
-//   .card-openblind .btn-primary {
-//     background-color: #4682b4;
-//     border-color: #4682b4;
-//   }
+  .card-openblind .btn-primary {
+    background-color: #4682b4;
+    border-color: #4682b4;
+  }
 
-//   .card-openblind .btn-primary:hover {
-//     background-color: #1e90ff;
-//     border-color: #1e90ff;
-//   }
+  .card-openblind .btn-primary:hover {
+    background-color: #1e90ff;
+    border-color: #1e90ff;
+  }
 
-//   /* Tarjeta Lista de Contactos */
-//   .card-contactos {
-//     max-width: 60%;
-//     padding: 20px;
-//     margin: auto;
-//     font-size: 0.9rem;
-//     background-color: #f9f9f9;
-//     border: 1px solid #87cefa;
-//   }
+  /* Tarjeta Lista de Contactos */
+  .card-contactos {
+    max-width: 60%;
+    padding: 20px;
+    margin: auto;
+    font-size: 0.9rem;
+    background-color: #f9f9f9;
+    border: 1px solid #87cefa;
+  }
 
-//   .card-contactos .card-title {
-//     color: #4985b9;
-//   }
+  .card-contactos .card-title {
+    color: #4985b9;
+  }
 
-//   .card-contactos .btn-outline-secondary {
-//     color: #f3f3f3;
-//     background-color: #4682b4;
-//     border-color: #4682b4;
-//   }
+  .card-contactos .btn-outline-secondary {
+    color: #f3f3f3;
+    background-color: #4682b4;
+    border-color: #4682b4;
+  }
 
-//   .card-contactos .btn-outline-secondary:hover {
-//     background-color: #1e90ff;
-//     border-color: #1e90ff;
-//   }
+  .card-contactos .btn-outline-secondary:hover {
+    background-color: #1e90ff;
+    border-color: #1e90ff;
+  }
 
-//   /* Imágenes de Contactos */
-//   .card-contactos .list-group-item img {
-//     width: 50px;
-//     height: 50px;
-//     object-fit: cover;
-//     border-radius: 50%;
-//     border: 2px solid #87cefa;
-//     margin-right: 10px;
-//   }
+  /* Imágenes de Contactos */
+  .card-contactos .list-group-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #87cefa;
+    margin-right: 10px;
+  }
 
-//   /* Tarjeta Calificación */
-//   .card-calificacion {
-//     background-color: #0D141A;
-//     border-radius: 10px;
-//     padding: 20px;
-//     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-//     position: relative;
-//     font-family: Arial, sans-serif;
-//     font-size: 0.9rem;
-//     max-width: 110%;
-//     max-height: 32%;
-//     margin-left: -35%;
-//     color: #e6f7ff;
-//   }
+  /* Tarjeta Calificación */
+  .card-calificacion {
+    background-color: #0D141A;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    max-width: 110%;
+    max-height: 32%;
+    margin-left: -35%;
+    color: #e6f7ff;
+  }
   
-//   .card-calificacion .card-title {
-//     font-size: 0.9rem;
-//     font-weight: bold;
-//     margin-bottom: 15px;
-//     color: #4985b9;
-//   }
+  .card-calificacion .card-title {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #4985b9;
+  }
   
-//   .card-calificacion .card-content p {
-//     margin: 0;
-//     font-size: 0.8rem;
-//   }
+  .card-calificacion .card-content p {
+    margin: 0;
+    font-size: 0.8rem;
+  }
   
-//   .card-calificacion .calificacion {
-//     font-weight: bold;
-//     font-size: 1rem;  
-//   }
+  .card-calificacion .calificacion {
+    font-weight: bold;
+    font-size: 1rem;  
+  }
   
-//   .text-primary {
-//     color: #1E90FF; /* Azul */
-//   }
+  .text-primary {
+    color: #1E90FF; /* Azul */
+  }
   
-//   .text-danger {
-//     color: #FF6347; /* Rojo */
-//   }
+  .text-danger {
+    color: #FF6347; /* Rojo */
+  }
   
-//   /* Icono de edición */
-//   .edit-icon {
-//     top: 15px;
-//     right: 10px;
-//     color: #FFFFFF;
-//     cursor: pointer;
-//   }
+  /* Icono de edición */
+  .edit-icon {
+    top: 15px;
+    right: 10px;
+    color: #FFFFFF;
+    cursor: pointer;
+  }
   
-//   .edit-icon i {
-//     font-size: 1rem;
-//   }
+  .edit-icon i {
+    font-size: 1rem;
+  }
   
-//   /* Tarjeta Estaciones */
-//   .card-estaciones {
-//     max-width: 110%;
-//     max-height: 32%;
-//     margin-left: -35%;
-//     background-color: #ffffff;
-//     border: 1px solid #00bfff;
-//     font-size: 0.9rem;
-//     color: #4985b9;
-//   }
-//   .card-estaciones .list-group-item img {
-//     width: 35px;
-//     height: 35px;
-//     object-fit: cover;
-//     border-radius: 50%; /* Imagen circular */
-//     border: 2px solid #87cefa;
-//     margin-right: 10px; 
-//   }
+  /* Tarjeta Estaciones */
+  .card-estaciones {
+    max-width: 110%;
+    max-height: 32%;
+    margin-left: -35%;
+    background-color: #ffffff;
+    border: 1px solid #00bfff;
+    font-size: 0.9rem;
+    color: #4985b9;
+  }
+  .card-estaciones .list-group-item img {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 50%; /* Imagen circular */
+    border: 2px solid #87cefa;
+    margin-right: 10px; 
+  }
   
 
-//   /* Tarjeta Usuarios Recientes */
-//   .card-usuarios {
-//     max-width: 110%;
-//     max-height: 22%;
-//     margin-left: -35%;
-//     border: 1px solid #00bfff;
-//     position: relative;
-//   }
-//   .card-usuarios .card-title {
-//     color: #4985b9;
-//     font-size: 1rem;
-//   }
+  /* Tarjeta Usuarios Recientes */
+  .card-usuarios {
+    max-width: 110%;
+    max-height: 22%;
+    margin-left: -35%;
+    border: 1px solid #00bfff;
+    position: relative;
+  }
+  .card-usuarios .card-title {
+    color: #4985b9;
+    font-size: 1rem;
+  }
 
-//   /* Imágenes de Contactos */
-//   .card-usuarios .list-group-item img {
-//     width: 50px;
-//     height: 50px;
-//     object-fit: cover;
-//     border-radius: 50%;
-//     border: 2px solid #87cefa;
-//     margin-right: 10px;
-//   }
+  /* Imágenes de Contactos */
+  .card-usuarios .list-group-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #87cefa;
+    margin-right: 10px;
+  }
 
-//   .dropdown-menu {
-//     max-height: 200px;
-//     overflow-y: auto;
-//   }
+  .dropdown-menu {
+    max-height: 200px;
+    overflow-y: auto;
+  }
 
-//   .dropdown-item img {
-//     width: 40px;
-//     height: 40px;
-//     object-fit: cover;
-//   }
+  .dropdown-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+  }
 
-//   .dropdown-item h6 {
-//     font-size: 0.9rem;
-//   }
+  .dropdown-item h6 {
+    font-size: 0.9rem;
+  }
 
-//   .dropdown-item small {
-//     font-size: 0.75rem;
-//     color: #888;
-//   }
+  .dropdown-item small {
+    font-size: 0.75rem;
+    color: #888;
+  }
 
-//   .edit-icon {
-//     top: 10px;
-//     right: 10px;
-//     cursor: pointer;
-//     color: rgb(99, 99, 99);
-//   }
-//   .edit-icon:hover {
-//     color: black;
-//   }
-//   .card-usuarios .edit-icon {
-//     position: absolute;
-//     top: 50px; 
-//     right: 55px; 
-//     font-size: 1.2rem; 
-//     color: gray; 
-//     cursor: pointer;
-//     transition: color 0.3s ease;
-//   }
+  .edit-icon {
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: rgb(99, 99, 99);
+  }
+  .edit-icon:hover {
+    color: black;
+  }
+  .card-usuarios .edit-icon {
+    position: absolute;
+    top: 50px; 
+    right: 55px; 
+    font-size: 1.2rem; 
+    color: gray; 
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
   
-//   .card-usuarios .edit-icon:hover {
-//     color: black; 
-//   }
-//   /* Animación para las imágenes */
-// .card img {
-//     transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
-//   }
+  .card-usuarios .edit-icon:hover {
+    color: black; 
+  }
+  /* Animación para las imágenes */
+.card img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  }
   
-//   .card img:hover {
-//     transform: scale(1.1); 
-//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-//     opacity: 0.9; 
-//   }
+  .card img:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    opacity: 0.9; 
+  }
   
-//   /* Ajustes específicos para imágenes de contactos */
-//   .card-contactos .list-group-item img,
-//   .card-usuarios .list-group-item img {
-//     transition: transform 0.3s ease, border-color 0.3s ease;
-//   }
+  /* Ajustes específicos para imágenes de contactos */
+  .card-contactos .list-group-item img,
+  .card-usuarios .list-group-item img {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
   
-//   .card-contactos .list-group-item img:hover,
-//   .card-usuarios .list-group-item img:hover {
-//     transform: rotate(10deg) scale(1.4); 
-//     border-color: #1e90ff; 
-//   }
+  .card-contactos .list-group-item img:hover,
+  .card-usuarios .list-group-item img:hover {
+    transform: rotate(10deg) scale(1.4); 
+    border-color: #1e90ff; 
+  }
   
-//   /* Para imágenes de estaciones */
-//   .card-estaciones .list-group-item img {
-//     transition: transform 0.3s ease, filter 0.3s ease;
-//   }
+  /* Para imágenes de estaciones */
+  .card-estaciones .list-group-item img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
   
-//   .card-estaciones .list-group-item img:hover {
-//     transform: scale(1.4);
-//     filter: brightness(1.4); 
-//   }
-//   /* Animación general para las tarjetas (excepto usuarios) */
-// .card:not(.card-usuarios) {
-//     transition: transform 0.3s ease, box-shadow 0.3s ease;
-//   }
+  .card-estaciones .list-group-item img:hover {
+    transform: scale(1.4);
+    filter: brightness(1.4); 
+  }
+  /* Animación general para las tarjetas (excepto usuarios) */
+.card:not(.card-usuarios) {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
   
-//   .card:not(.card-usuarios):hover {
-//     transform: translateY(-10px); 
-//     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
-//   }
+  .card:not(.card-usuarios):hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  }
   
-//   /* Animación específica para la tarjeta OpenBlind */
-//   .card-openblind:hover {
-//     transform: scale(1.05); 
-//     box-shadow: 0 10px 20px rgba(0, 191, 255, 0.5); 
-//   }
+  /* Animación específica para la tarjeta OpenBlind */
+  .card-openblind:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 10px 20px rgba(0, 191, 255, 0.5); 
+  }
   
-//   /* Animación específica para la tarjeta Lista de Contactos */
-//   .card-contactos:hover {
-//     transform: scale(1.03) rotate(1deg); 
-//     border-color: #1e90ff; 
-//     box-shadow: 0 6px 12px rgba(70, 130, 180, 0.3);
-//   }
+  /* Animación específica para la tarjeta Lista de Contactos */
+  .card-contactos:hover {
+    transform: scale(1.03) rotate(1deg); 
+    border-color: #1e90ff; 
+    box-shadow: 0 6px 12px rgba(70, 130, 180, 0.3);
+  }
   
-//   /* Animación específica para la tarjeta Estaciones */
-//   .card-estaciones:hover {
-//     transform: scale(1.05); /* Aumenta ligeramente el tamaño */
-//     box-shadow: 0 10px 20px rgba(135, 206, 250, 0.5); /* Sombra azul */
-//     border-color: #00bfff; /* Resalta el borde */
-//   }
+  /* Animación específica para la tarjeta Estaciones */
+  .card-estaciones:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0 10px 20px rgba(135, 206, 250, 0.5); /* Sombra azul */
+    border-color: #00bfff; /* Resalta el borde */
+  }
   
-//   /* Animación específica para la tarjeta Calificación */
-//   .card-calificacion:hover {
-//     transform: scale(1.08); /* Aumenta el tamaño */
-//     box-shadow: 0 12px 24px rgba(255, 255, 255, 0.3); 
-//     background-color: #0d202a; 
-//   }
+  /* Animación específica para la tarjeta Calificación */
+  .card-calificacion:hover {
+    transform: scale(1.08); /* Aumenta el tamaño */
+    box-shadow: 0 12px 24px rgba(255, 255, 255, 0.3); 
+    background-color: #0d202a; 
+  }
   
