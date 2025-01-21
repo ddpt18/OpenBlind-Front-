@@ -1,6 +1,6 @@
 <div class="container-fluid mt-5">
   <div class="row justify-content-center">
-    <div class="col-md-10">
+    <div class="col-12 col-md-10 col-lg-8">
       <div class="card shadow-lg">
         <div class="card-header text-center">
           <h3>Registro de Rutas</h3>
@@ -8,8 +8,8 @@
         <div class="card-body">
           <div class="row">
             <!-- Formulario -->
-            <div class="col-lg-7">
-              <form>
+            <div class="col-12 col-lg-7">
+              <form (ngSubmit)="onSubmit()">
                 <div class="mb-3">
                   <label for="nombre-ruta" class="form-label">
                     Nombre de la ruta <span class="text-danger">*</span>
@@ -18,6 +18,8 @@
                     <input
                       type="text"
                       id="nombre-ruta"
+                      [(ngModel)]="route.name"
+                      name="nombreRuta"
                       class="form-control"
                       placeholder="Nombre de la ruta"
                       required
@@ -35,6 +37,8 @@
                     <input
                       type="text"
                       id="ubicacion-ruta"
+                      [(ngModel)]="route.location"
+                      name="ubicacionRuta"
                       class="form-control"
                       placeholder="Ubicación de la ruta"
                       required
@@ -52,6 +56,8 @@
                     <input
                       type="text"
                       id="nombre-transporte"
+                      [(ngModel)]="route.transportName"
+                      name="nombreTransporte"
                       class="form-control"
                       placeholder="Nombre del transporte que pasa por la ruta"
                       required
@@ -61,26 +67,25 @@
                     </span>
                   </div>
                 </div>
-                <a href="/core/list/routes-list" class="btn btn-primary w-100">
+                <button type="submit" class="btn btn-primary w-100">
                   Registrar
-                </a>
+                </button>
               </form>
             </div>
-            <!-- imagen -->
-            <div class="col-lg-5 d-flex align-items-center justify-content-center">
-  <a 
-    href="https://pasajeros.quito.gob.ec/wp-content/uploads/2024/08/Mapa_SIT_2023.jpg" 
-    target="_blank" 
-    rel="noopener noreferrer"
-  >
-    <img
-      src="https://pasajeros.quito.gob.ec/wp-content/uploads/2024/08/Mapa_SIT_2023.jpg"
-      alt="Mapa"
-      class="img-fluid rounded shadow-lg custom-map-height"
-    />
-  </a>
-</div>
-
+            <!-- Imagen -->
+            <div class="col-12 col-lg-5 d-flex align-items-center justify-content-center mt-4 mt-lg-0">
+              <a
+                href="https://pasajeros.quito.gob.ec/wp-content/uploads/2024/08/Mapa_SIT_2023.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://pasajeros.quito.gob.ec/wp-content/uploads/2024/08/Mapa_SIT_2023.jpg"
+                  alt="Mapa"
+                  class="img-fluid rounded shadow-lg custom-map-height"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -88,7 +93,7 @@
   </div>
 </div>
 
-<!-- Iconos de Font Awesome -->
+<!-- Font Awesome -->
 <link
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
   rel="stylesheet"

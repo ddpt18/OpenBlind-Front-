@@ -1,9 +1,9 @@
 <div class="container">
   <!-- Fila 1: Imagen de Perfil -->
   <div class="row justify-content-center">
-    <div class="col-md-4 text-center">
+    <div class="col-10 col-md-4 text-center">
       <img src="assets/images/descarga (1).jpeg" class="img-fluid profile-img rounded-circle shadow-lg" alt="Imagen de perfil">
-      <button class="btn btn-gradient d-flex align-items-center justify-content-center mt-2">
+      <button class="btn btn-gradient mt-3">
         <i class="fas fa-pencil-alt btn-icon"></i> Editar Perfil
       </button>
     </div>
@@ -11,7 +11,7 @@
 
   <!-- Fila 2: Información Personal -->
   <div class="row mt-5">
-    <div class="col-md-10 offset-md-1">
+    <div class="col-12 col-lg-10 offset-lg-1">
       <div class="card shadow-lg">
         <div class="card-header bg-gradient text-white text-center">
           <h4>Información del Usuario</h4>
@@ -19,7 +19,7 @@
         <div class="card-body">
           <div class="row">
             <!-- Columna 1: Detalles Personales -->
-            <div class="col-md-6">
+            <div class="col-12 col-md-6">
               <ul class="list-group">
                 <li class="list-group-item bg-primary text-white"><strong>Nombres:</strong> {{ profile.nombres }}</li>
                 <li class="list-group-item"><strong>Apellidos:</strong> {{ profile.apellidos }}</li>
@@ -27,7 +27,7 @@
               </ul>
             </div>
             <!-- Columna 2: Contacto -->
-            <div class="col-md-6">
+            <div class="col-12 col-md-6">
               <ul class="list-group">
                 <li class="list-group-item bg-primary text-white"><strong>Email:</strong> {{ profile.email }}</li>
                 <li class="list-group-item"><strong>Teléfono:</strong> {{ profile.telefono }}</li>

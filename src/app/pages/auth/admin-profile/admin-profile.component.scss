@@ -1,16 +1,16 @@
 /* Imagen de perfil */
 .profile-img {
-  width: 150px;
-  height: 150px;
+  width: 120px; /* Cambia dinámicamente en móviles */
+  height: 120px;
   border: 4px solid #01072b;
   object-fit: cover;
-  margin-top: 35px; /* Baja la imagen */
+  margin-top: 20px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .profile-img:hover {
-  transform: scale(1.1); /* Aumenta ligeramente el tamaño */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Agrega una sombra */
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Botón */
@@ -21,11 +21,10 @@
   border-radius: 30px;
   border: none;
   transition: 0.3s;
-  display: inline-flex; /* Asegura que el contenido del botón esté centrado */
+  display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 15px; /* Espaciado entre la imagen y el botón */
-  margin-left: 110px;
+  margin: 0 auto; /* Centra automáticamente */
 }
 
 .btn-gradient:hover {
@@ -60,10 +59,15 @@
   color: #fff;
 }
 
-/* Centrado del botón en dispositivos pequeños */
+/* Ajustes para dispositivos pequeños */
 @media (max-width: 768px) {
+  .profile-img {
+    width: 100px;
+    height: 100px;
+  }
+
   .btn-gradient {
-    margin: 0 auto; /* Centra el botón en pantallas pequeñas */
-    display: block;
+    font-size: 14px;
+    padding: 8px 16px;
   }
 }
