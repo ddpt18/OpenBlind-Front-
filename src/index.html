@@ -10,15 +10,191 @@
   <!-- Leaflet CSS -->
   <link
     rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    href="/src/styles.scss"
   />
 </head>
 <body>
   <app-root></app-root>
 
+  <html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Contenedor principal para hacer scroll interno */
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow-y: auto;
+      padding: 20px;
+    }
+
+    /* Tarjetas */
+    .card {
+      border: none;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .list-group-item {
+      border: none;
+      border-radius: 5px;
+      background: #f9f9f9;
+    }
+
+    /* Tarjeta OpenBlind */
+    .card-openblind {
+      max-width: 60%;
+      padding: 20px;
+      margin: auto;
+      font-size: 0.9rem;
+      background-color: #0D141A;
+      border: 1px solid #87cefa;
+      text-align: center;
+      color: #e6f7ff;
+    }
+
+    .card-openblind .btn-primary {
+      background-color: #4682b4;
+      border-color: #4682b4;
+    }
+
+    .card-openblind .btn-primary:hover {
+      background-color: #1e90ff;
+      border-color: #1e90ff;
+    }
+
+    /* Tarjeta Lista de Contactos */
+    .card-contactos {
+      max-width: 60%;
+      padding: 20px;
+      margin: auto;
+      font-size: 0.9rem;
+      background-color: #f9f9f9;
+      border: 1px solid #87cefa;
+    }
+
+    .card-contactos .card-title {
+      color: #4985b9;
+    }
+
+    .card-contactos .btn-outline-secondary {
+      color: #f3f3f3;
+      background-color: #4682b4;
+      border-color: #4682b4;
+    }
+
+    .card-contactos .btn-outline-secondary:hover {
+      background-color: #1e90ff;
+      border-color: #1e90ff;
+    }
+
+    /* Imágenes de Contactos */
+    .card-contactos .list-group-item img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #87cefa;
+      margin-right: 10px;
+    }
+
+    /* Tarjeta Calificación */
+    .card-calificacion {
+      background-color: #0D141A;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: relative;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      max-width: 110%;
+      max-height: 32%;
+      margin-left: -35%;
+      color: #e6f7ff;
+    }
+
+    .card-calificacion .card-title {
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #4985b9;
+    }
+
+    .card-calificacion .card-content p {
+      margin: 0;
+      font-size: 0.8rem;
+    }
+
+    .card-calificacion .calificacion {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .text-primary {
+      color: #1E90FF;
+    }
+
+    .text-danger {
+      color: #FF6347;
+    }
+
+    /* Icono de edición */
+    .edit-icon {
+      top: 15px;
+      right: 10px;
+      color: #FFFFFF;
+      cursor: pointer;
+    }
+
+    .edit-icon i {
+      font-size: 1rem;
+    }
+
+    /* Tarjeta Estaciones */
+    .card-estaciones {
+      max-width: 110%;
+      max-height: 32%;
+      margin-left: -35%;
+      background-color: #ffffff;
+      border: 1px solid #00bfff;
+      font-size: 0.9rem;
+      color: #4985b9;
+    }
+
+    .card-estaciones .list-group-item img {
+      width: 35px;
+      height: 35px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #87cefa;
+      margin-right: 10px;
+    }
+
+    /* Animaciones */
+    .card img {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    }
+
+    .card img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      opacity: 0.9;
+    }
+  </style>
+  </head>
   <div class="container-fluid pt-5 dashboard-container">
-    <link rel="stylesheet" href="/src/app/pages/core/dashboard/dashboard.component.scss">
-    <link rel="stylesheet" href="/dashboard/dashboard.component.scss">
     <div class="row g-4">
       <!-- Columna Principal -->
       <div class="col-12 col-lg-8">
@@ -32,7 +208,7 @@
             <i class="bi bi-pencil"></i>
           </div>
         </div>
-
+  
         <!-- Card de Lista de Contactos -->
         <div class="card p-4 mb-4 shadow small-card card-contactos">
           <div class="d-flex justify-content-between align-items-center mb-3">
@@ -64,93 +240,94 @@
           </div>
         </div>
       </div>
-
+  
       <!-- Columna Secundaria -->
       <div class="col-12 col-lg-4">
         <!-- Card de Calificación -->
         <div class="card card-calificacion position-relative">
-          <h5 class="card-title">Calificación servicio Metro de Quito</h5>
-          <div class="card-content">
-            <p><strong>Accesibilidad</strong></p>
-            <p><span class="calificacion text-primary">9</span></p>
-            <p>Diciembre 2023</p>
-            <p><span class="calificacion text-danger">9,2</span></p>
-            <p>Enero 2024</p>
-          </div>
-          <div class="edit-icon position-absolute">
-            <i class="bi bi-pencil"></i>
-          </div>
+            <h5 class="card-title">Calificación servicio Metro de Quito</h5>
+            <div class="card-content">
+              <p><strong>Accesibilidad</strong></p>
+              <p><span class="calificacion text-primary">9</span></p>
+              <p>Diciembre 2023</p>
+              <p><span class="calificacion text-danger">9,2</span></p>
+              <p>Enero 2024</p>
+            </div>
+            <div class="edit-icon position-absolute">
+              <i class="bi bi-pencil"></i>
+            </div>
         </div>
-
+        
         <br>
 
         <!-- Card de Usuarios Recientes -->
         <div class="card p-4 shadow card-usuarios">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="card-title">Usuarios Recientes</h5>
-            <span class="badge bg-success">Actualizado</span>
-            <div class="edit-icon position-absolute">
-              <i class="bi bi-pencil"></i>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="card-title">Usuarios Recientes</h5>
+              <span class="badge bg-success">Actualizado</span>
+              <div class="edit-icon position-absolute">
+                <i class="bi bi-pencil"></i>
+              </div>
             </div>
-          </div>
-          <!-- Dropdown de usuarios recientes -->
-          <div class="dropdown">
-            <button
-              id="dropdownUsuarios"
-              class="btn btn-primary dropdown-toggle"
-              type="button">
-              Usuarios Recientes
-            </button>
-            <div class="dropdown-menu">
-              <div class="list-group">
-                <div class="list-group-item d-flex align-items-center">
-                  <img src="https://static.vecteezy.com/system/resources/previews/043/116/745/non_2x/illustration-of-boy-profile-anime-style-black-silhouette-isolated-on-white-background-free-vector.jpg" alt="User" class="rounded-circle me-3">
-                  <div>
-                    <h6 class="mb-0">Leo Jacobsen</h6>
-                    <small>24 Ene, 2025</small>
-                  </div>
-                </div>
-                <div class="list-group-item d-flex align-items-center">
-                  <img src="https://cdn.pixabay.com/photo/2024/07/22/17/11/elegance-in-profile-8913207_640.png" alt="User" class="rounded-circle me-3">
-                  <div>
-                    <h6 class="mb-0">Andrea Allen</h6>
-                    <small>24 Ene, 2025</small>
+            <!-- Dropdown de usuarios recientes -->
+            <div class="dropdown">
+                <button
+                    id="dropdownUsuarios"
+                    class="btn btn-primary dropdown-toggle"
+                    (click)="toggleDropdown()"
+                    [attr.aria-expanded]="isDropdownOpen ? 'true' : 'false'"
+                    type="button">
+                    Usuarios Recientes
+                    </button>
+                <div class="dropdown-menu" [class.show]="isDropdownOpen">
+                  <div class="list-group">
+                    <div class="list-group-item d-flex align-items-center">
+                      <img src="https://static.vecteezy.com/system/resources/previews/043/116/745/non_2x/illustration-of-boy-profile-anime-style-black-silhouette-isolated-on-white-background-free-vector.jpg" alt="User" class="rounded-circle me-3">
+                      <div>
+                        <h6 class="mb-0">Leo Jacobsen</h6>
+                        <small>24 Ene, 2025</small>
+                      </div>
+                    </div>
+                    <div class="list-group-item d-flex align-items-center">
+                      <img src="https://cdn.pixabay.com/photo/2024/07/22/17/11/elegance-in-profile-8913207_640.png" alt="User" class="rounded-circle me-3">
+                      <div>
+                        <h6 class="mb-0">Andrea Allen</h6>
+                        <small>24 Ene, 2025</small>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
           </div>
-        </div>
-
-        <br>
-
+          <br>
+  
         <!-- Card de Estaciones -->
-        <div class="card p-4 mb-4 shadow card-estaciones">
-          <h5 class="card-title">Estaciones</h5>
-          <ul class="list-group">
-            <li class="list-group-item d-flex align-items-center">
-              <img src="https://imagenes.primicias.ec/files/og_thumbnail/uploads/2024/05/25/6651d78b5921f.jpeg" class="rounded-circle me-3">
-              <div>
-                <span>Marión Valverde</span>
-                <small class="text-muted d-block">31 Enero 2024 - 10:00 AM</small>
-              </div>
-            </li>
-            <li class="list-group-item d-flex align-items-center">
-              <img src="https://imagenes.primicias.ec/files/og_thumbnail/uploads/2024/05/25/6651d78b5921f.jpeg" class="rounded-circle me-3">
-              <div>
-                <span>Solanda</span>
-                <small class="text-muted d-block">31 Enero 2024 - 11:00 AM</small>
-              </div>
-            </li>
-          </ul>
-          <div class="edit-icon position-absolute">
-            <i class="bi bi-pencil"></i>
-          </div>
-        </div>
+            <div class="card p-4 mb-4 shadow card-estaciones">
+                <h5 class="card-title">Estaciones</h5>
+                <ul class="list-group">
+                <li class="list-group-item d-flex align-items-center">
+                    <img src="https://imagenes.primicias.ec/files/og_thumbnail/uploads/2024/05/25/6651d78b5921f.jpeg"  class="rounded-circle me-3">
+                    <div>
+                    <span>Marión Valverde</span>
+                    <small class="text-muted d-block">31 Enero 2024 - 10:00 AM</small>
+                    </div>
+                </li>
+                <li class="list-group-item d-flex align-items-center">
+                    <img src="https://imagenes.primicias.ec/files/og_thumbnail/uploads/2024/05/25/6651d78b5921f.jpeg"  class="rounded-circle me-3">
+                    <div>
+                    <span>Solanda</span>
+                    <small class="text-muted d-block">31 Enero 2024 - 11:00 AM</small>
+                    </div>
+                </li>
+                </ul>
+                <div class="edit-icon position-absolute">
+                    <i class="bi bi-pencil"></i>
+                  </div>
+            </div>
       </div>
     </div>
   </div>
-  <link rel="stylesheet" href="/dashboard/dashboard.component.scss">
+  
 
   <!-- Leaflet JS -->
   <script
