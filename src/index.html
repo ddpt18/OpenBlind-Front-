@@ -265,9 +265,11 @@
                     <input type="checkbox" id="remember-me" />
                     <label for="remember-me">Recordarme</label>
                 </div>
-                <button routerLink='/core/dashboard' type="button" class="btn">Iniciar Sesión</button>
+                <button routerLink="/core/dashboard" type="button" class="btn">Iniciar Sesión</button>
             </form>
-            <p class="register">¿Aún no tienes cuenta? <a href="/auth/register">Haz clic aquí para registrarte.</a></p>
+            <p class="register">
+              ¿Aún no tienes cuenta? <a [routerLink]="['/auth/register']">Haz clic aquí para registrarte.</a>
+            </p>
         </div>
     </div>
 </body>
