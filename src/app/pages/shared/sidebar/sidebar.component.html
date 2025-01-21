@@ -10,7 +10,7 @@
     <a href="/auth/admin-profile" class="nav-link"><i class="bi bi-person-circle"></i> Perfil</a>
     <a href="/auth/login" class="nav-link"><i class="bi bi-box-arrow-right"></i> Cerrar Sesión</a>
     <hr class="separator">
-    <a href="/core/dashboard" class="nav-link"><i class="bi bi-speedometer2"></i> Inicio</a>
+    <a href="/core/dashboard" class="nav-link"><i class="bi bi-speedometer2"></i> Dashboard</a>
 
     <div class="nav-item">
       <a class="nav-link" href="#" role="button" aria-expanded="false" (click)="onRutasClick($event)">
@@ -53,13 +53,18 @@
         <span class="d-inline-block">
           <i class="bi bi-mic"></i> Guía de Voz
         </span>
+        <i class="bi bi-chevron-down float-end rotate-icon" [ngClass]="{'rotate': !isCollapsedGuia}"></i>
       </a>
+      <div class="collapse-content" [class.show]="!isCollapsedGuia">
+        <a (click)="onHistorialGuiaClick($event)" href="/core/list/voice-guide-list" class="nav-link ps-4">Historial de Guía de Voz</a>
+      </div>
     </div>
-    
     
     <div class="nav-item">
       <a href="/core/list/user-list" class="nav-link"><i class="bi bi-people"></i> Historial de Usuarios</a>
     </div>
   </nav>
+  <div class="toggle-sidebar" (click)="toggleSidebar()">
+    <i class="bi bi-chevron-left"></i> Cerrar Menú
+  </div>
 </div>
-

@@ -124,3 +124,57 @@ body {
 .sidebar.collapsed .profile {
   display: none;
 }
+
+/* Estilos responsivos */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 991px) {
+  .sidebar {
+    width: 200px; /* Ajusta el ancho para tablets */
+  }
+
+  .sidebar.collapsed {
+    width: 50px; /* Menú colapsado en tablets */
+  }
+
+  .sidebar .nav-link {
+    font-size: 0.9rem; /* Reduce el tamaño del texto */
+  }
+
+  .sidebar .profile img {
+    width: 60px; /* Reduce la imagen de perfil */
+    height: 60px;
+  }
+}
+
+/* Teléfonos y pantallas pequeñas */
+@media (max-width: 767px) {
+  .sidebar {
+    width: 100%; /* Barra lateral ocupa todo el ancho */
+    height: auto; /* Ajusta la altura */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten */
+  }
+
+  .sidebar.collapsed {
+    width: 100%; /* Menú colapsado también ocupa todo el ancho */
+  }
+
+  .sidebar .profile {
+    text-align: center; /* Centra la información del perfil */
+  }
+
+  .sidebar .profile img {
+    margin: 0 auto; /* Centra la imagen */
+  }
+
+  .sidebar .nav-link {
+    text-align: center; /* Centra los enlaces */
+    font-size: 0.85rem; /* Ajusta el tamaño del texto */
+  }
+
+  .toggle-sidebar {
+    bottom: 10px;
+    left: 50%; /* Centra el botón de colapso */
+    transform: translateX(-50%);
+  }
+}
