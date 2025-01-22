@@ -38,16 +38,6 @@ export class SidebarComponent {
     this.router.navigate(['/core/list/tourist-register-list']);
   }
 
-  onGuiaClick(event: Event): void {
-    event.preventDefault();
-    this.router.navigate(['/core/voice-guide']);
-    this.toggleCollapse('Guia');
-  }
-
-  onHistorialGuiaClick(event: Event): void {
-    event.preventDefault();
-    this.router.navigate(['/core/list/voice-guide-list']);
-  }
 
   onRutasClick(event: Event): void {
     event.preventDefault();
