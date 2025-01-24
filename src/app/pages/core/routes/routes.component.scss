@@ -15,25 +15,6 @@
   color: #dbdbdb;
 }
 
-.input-group {
-  border-radius: 10px;
-  margin-bottom: 30px;
-}
-
-.input-group-text {
-  background-color: #dbdbdb;
-}
-
-/* Botón */
-button {
-  background-color: #007bff;
-  border-color: #007bff;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
 /* Formulario */
 .form-control {
   transition: all 0.3s ease-in-out;
@@ -51,6 +32,25 @@ button:hover {
 .form-control:hover {
   border-color: #1f7fe6;
   transform: scale(1.01);
+}
+
+.input-group {
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.input-group-text {
+  background-color: #dbdbdb;
+}
+
+/* Botón */
+button {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
 
 /* Imagen */
@@ -76,6 +76,10 @@ button:hover {
   .img-fluid {
     margin-top: 20px;
   }
+
+  .custom-map-height {
+    height: 300px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -84,18 +88,24 @@ button:hover {
   }
 }
 
-/* Adaptación para pantallas más pequeñas */
 @media (max-width: 480px) {
   .card-header h3 {
     font-size: 1.5rem;
   }
+
   .form-control {
     font-size: 1rem;
   }
+
   .input-group-text {
     font-size: 1rem;
   }
+
   button {
     font-size: 1rem;
+  }
+
+  .custom-map-height {
+    height: 250px;
   }
 }
