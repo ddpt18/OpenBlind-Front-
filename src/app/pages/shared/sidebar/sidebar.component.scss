@@ -1,7 +1,8 @@
+/* Estilos generales */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
+  padding: 10px;
   display: flex; /* Usamos flexbox para distribuir los elementos */
 }
 
@@ -12,7 +13,7 @@ body {
 
 .sidebar {
   height: 100vh;
-  width: 25%; /* Ocupa 3 de las 12 columnas (3/12) */
+  width: 15%; /* Ocupa 3 de las 12 columnas (3/12) */
   background-color: #0D141A;
   color: #ffffff;
   position: fixed;
@@ -109,7 +110,7 @@ body {
 }
 
 .sidebar.collapsed {
-  width: 25%; /* Colapsado ocupa 3 columnas */
+  width: 0; /* Colapsado ocupa 0% del ancho */
 }
 
 .sidebar.collapsed .profile-info,
@@ -187,6 +188,7 @@ body {
   }
 }
 
+/* Contenido */
 .content {
   flex: 1; /* El contenido ocupará el resto del espacio disponible */
   padding: 20px; /* Espaciado para el contenido */
