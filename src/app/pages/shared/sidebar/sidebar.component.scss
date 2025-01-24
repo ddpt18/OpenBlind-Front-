@@ -2,18 +2,24 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  display: flex; /* Usamos flexbox para distribuir los elementos */
+}
+
+.container {
+  display: flex;
+  flex: 1; /* Hace que el contenido ocupe el espacio disponible */
 }
 
 .sidebar {
   height: 100vh;
-  width: 310px;
+  width: 25%; /* Ocupa 3 de las 12 columnas (3/12) */
   background-color: #0D141A;
   color: #ffffff;
-  position: fixed; /* Mantener fijo en la izquierda */
+  position: fixed;
   left: 0;
-  top: 0; /* Fijar también en la parte superior */
+  top: 0;
   transition: width 0.3s ease;
-  overflow-y: auto; /* Agrega scroll si el contenido es más grande que la pantalla */
+  overflow-y: auto;
 }
 
 .sidebar .profile {
@@ -52,10 +58,6 @@ body {
   margin: 0;
   font-size: 0.9rem;
   color: #dddddd;
-}
-
-.sidebar .profile .actions {
-  margin-top: 15px;
 }
 
 .sidebar .nav-item {
@@ -107,10 +109,10 @@ body {
 }
 
 .sidebar.collapsed {
-  width: 50px;
+  width: 25%; /* Colapsado ocupa 3 columnas */
 }
 
-.sidebar.collapsed .profile-info, 
+.sidebar.collapsed .profile-info,
 .sidebar.collapsed .nav-item span {
   display: none;
 }
@@ -130,19 +132,19 @@ body {
 /* Tablets y pantallas medianas */
 @media (max-width: 991px) {
   .sidebar {
-    width: 200px; /* Ajusta el ancho para tablets */
+    width: 25%; /* Ajusta el ancho para tablets (3/12 columnas) */
   }
 
   .sidebar.collapsed {
-    width: 50px; /* Menú colapsado en tablets */
+    width: 0; /* Menú colapsado ocupa 0% del ancho */
   }
 
   .sidebar .nav-link {
-    font-size: 0.9rem; /* Reduce el tamaño del texto */
+    font-size: 0.9rem;
   }
 
   .sidebar .profile img {
-    width: 60px; /* Reduce la imagen de perfil */
+    width: 60px;
     height: 60px;
   }
 }
@@ -150,31 +152,47 @@ body {
 /* Teléfonos y pantallas pequeñas */
 @media (max-width: 767px) {
   .sidebar {
-    width: 100%; /* Barra lateral ocupa todo el ancho */
-    height: auto; /* Ajusta la altura */
-    flex-wrap: wrap; /* Permite que los elementos se ajusten */
+    width: 25%; /* Barra lateral ocupa 3 de 12 columnas */
+    height: auto;
+    position: fixed;
+    z-index: 1050;
   }
 
   .sidebar.collapsed {
-    width: 100%; /* Menú colapsado también ocupa todo el ancho */
+    width: 0; /* Menú colapsado ocupa 0% del ancho */
   }
 
   .sidebar .profile {
-    text-align: center; /* Centra la información del perfil */
+    text-align: center;
   }
 
   .sidebar .profile img {
-    margin: 0 auto; /* Centra la imagen */
+    margin: 0 auto;
   }
 
   .sidebar .nav-link {
-    text-align: center; /* Centra los enlaces */
-    font-size: 0.85rem; /* Ajusta el tamaño del texto */
+    text-align: center;
+    font-size: 0.85rem;
   }
 
   .toggle-sidebar {
     bottom: 10px;
-    left: 50%; /* Centra el botón de colapso */
+    left: 50%;
     transform: translateX(-50%);
   }
+
+  /* Ajustar el contenido cuando el sidebar está presente */
+  .container {
+    margin-left: 25%; /* El contenido empieza después de la barra lateral (3/12 columnas) */
+  }
+}
+
+.content {
+  flex: 1; /* El contenido ocupará el resto del espacio disponible */
+  padding: 20px; /* Espaciado para el contenido */
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.collapsed ~ .content {
+  margin-left: 0;
 }
