@@ -9,7 +9,7 @@
           <div class="row">
             <!-- Formulario -->
             <div class="col-12 col-lg-7">
-              <form (ngSubmit)="onSubmit()">
+              <form (ngSubmit)="onSubmit($event)">
                 <div class="mb-3">
                   <label for="nombre-ruta" class="form-label">
                     Nombre de la ruta <span class="text-danger">*</span>
