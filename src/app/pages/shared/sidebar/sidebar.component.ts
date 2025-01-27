@@ -7,6 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
+isDesktop: any;
+onGuiaClick($event: MouseEvent) {
+throw new Error('Method not implemented.');
+}
 
   isCollapsed = false;
   isCollapsedMensajes = true;
@@ -38,6 +42,10 @@ export class SidebarComponent {
     this.router.navigate(['/core/list/tourist-register-list']);
   }
 
+  onHistorialGuiaClick(event: Event): void {
+    event.preventDefault();
+    this.router.navigate(['/core/list/voice-guide-list']);
+  }
 
   onRutasClick(event: Event): void {
     event.preventDefault();

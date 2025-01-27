@@ -1,26 +1,19 @@
-/* Estilos generales */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 20px;
-  display: flex; /* Usamos flexbox para distribuir los elementos */
-}
-
-.container {
-  display: flex;
-  flex: 1; /* Hace que el contenido ocupe el espacio disponible */
+  padding: 0;
 }
 
 .sidebar {
   height: 100vh;
-  width: 15%; /* Ocupa 3 de las 12 columnas (3/12) */
+  width: 310px;
   background-color: #0D141A;
   color: #ffffff;
-  position: fixed;
+  position: fixed; /* Mantener fijo en la izquierda */
   left: 0;
-  top: 0;
+  top: 0; /* Fijar también en la parte superior */
   transition: width 0.3s ease;
-  overflow-y: auto;
+  overflow-y: auto; /* Agrega scroll si el contenido es más grande que la pantalla */
 }
 
 .sidebar .profile {
@@ -59,6 +52,10 @@ body {
   margin: 0;
   font-size: 0.9rem;
   color: #dddddd;
+}
+
+.sidebar .profile .actions {
+  margin-top: 15px;
 }
 
 .sidebar .nav-item {
@@ -110,10 +107,10 @@ body {
 }
 
 .sidebar.collapsed {
-  width: 0; /* Colapsado ocupa 0% del ancho */
+  width: 50px;
 }
 
-.sidebar.collapsed .profile-info,
+.sidebar.collapsed .profile-info, 
 .sidebar.collapsed .nav-item span {
   display: none;
 }
@@ -133,68 +130,66 @@ body {
 /* Tablets y pantallas medianas */
 @media (max-width: 991px) {
   .sidebar {
-    width: 25%; /* Ajusta el ancho para tablets (3/12 columnas) */
+    width: 200px; /* Ajusta el ancho para tablets */
   }
 
   .sidebar.collapsed {
-    width: 0; /* Menú colapsado ocupa 0% del ancho */
+    width: 50px; /* Menú colapsado en tablets */
   }
 
   .sidebar .nav-link {
-    font-size: 0.9rem;
+    font-size: 0.9rem; /* Reduce el tamaño del texto */
   }
 
   .sidebar .profile img {
-    width: 60px;
+    width: 60px; /* Reduce la imagen de perfil */
     height: 60px;
   }
 }
 
-/* Teléfonos y pantallas pequeñas */
+//* Teléfonos y pantallas pequeñas */
 @media (max-width: 767px) {
   .sidebar {
-    width: 25%; /* Barra lateral ocupa 3 de 12 columnas */
-    height: auto;
-    position: fixed;
-    z-index: 1050;
+    width: 50%; /* Sidebar ocupa la mitad de la pantalla */
+    height: 100vh; /* Asegura que ocupe toda la altura */
+    position: fixed; /* Mantén la posición fija */
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+    transition: width 0.3s ease; /* Transición para colapso */
   }
 
   .sidebar.collapsed {
-    width: 0; /* Menú colapsado ocupa 0% del ancho */
+    width: 20%; /* Sidebar colapsado ocupa menos espacio */
   }
 
   .sidebar .profile {
-    text-align: center;
+    text-align: center; /* Centra la información del perfil */
   }
 
   .sidebar .profile img {
-    margin: 0 auto;
+    margin: 0 auto; /* Centra la imagen */
   }
 
   .sidebar .nav-link {
-    text-align: center;
-    font-size: 0.85rem;
+    text-align: left; /* Cambia el texto a alineación izquierda */
+    font-size: 0.85rem; /* Ajusta el tamaño del texto */
   }
 
   .toggle-sidebar {
     bottom: 10px;
-    left: 50%;
+    left: 50%; /* Centra el botón de colapso */
     transform: translateX(-50%);
   }
 
-  /* Ajustar el contenido cuando el sidebar está presente */
-  .container {
-    margin-left: 25%; /* El contenido empieza después de la barra lateral (3/12 columnas) */
+  /* Ajustes para los enlaces del menú */
+  .sidebar .nav-item {
+    margin: 5px 0;
   }
-}
 
-/* Contenido */
-.content {
-  flex: 1; /* El contenido ocupará el resto del espacio disponible */
-  padding: 20px; /* Espaciado para el contenido */
-  transition: margin-left 0.3s ease;
-}
+  .sidebar .nav-link {
+    padding: 10px 15px;
+  }
 
-.sidebar.collapsed ~ .content {
-  margin-left: 0;
+  .sidebar .collapse .nav-link {
+    font-size: 0.8rem;
+  }
 }

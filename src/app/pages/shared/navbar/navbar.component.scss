@@ -1,181 +1,161 @@
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-.sidebar {
-  height: 100vh;
-  width: 310px;
-  background-color: #0D141A;
-  color: #ffffff;
-  position: fixed; /* Mantener fijo en la izquierda */
-  left: 0;
-  top: 0; /* Fijar también en la parte superior */
-  transition: width 0.3s ease;
-  overflow-y: auto; /* Agrega scroll si el contenido es más grande que la pantalla */
-}
-
-.sidebar .profile {
-  text-align: right;
-  padding: 20px;
-  background-image: url('https://cdn.pixabay.com/photo/2017/06/14/01/43/background-2400765_640.jpg');
-  background-size: cover;
-  background-position: center;
+/* Estilos generales para la barra de navegación */
+.navbar {
+  height: 60px;
+  max-width: 90%;
+  position: relative;
+  top: 25px;
+  left: 20px;
+  margin: 0 auto;
+  border-radius: 13px;
+  padding: 0 15px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.sidebar .profile img {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  border: 2px solid #ffffff;
-  margin-bottom: 10px;
-  transition: transform 0.3s ease;
+.navbar-brand {
+  font-size: 1rem;
+  flex-shrink: 0;
 }
 
-.sidebar .profile img:hover {
-  transform: scale(1.2);
-}
-
-.sidebar .profile-info {
-  text-align: left;
-}
-
-.sidebar .profile-info h4 {
-  margin: 0;
-  font-size: 1.2rem;
-}
-
-.sidebar .profile-info p {
-  margin: 0;
+.search-input {
+  background-color: #2c2c2c;
+  border: none;
+  color: white;
+  height: 32px;
   font-size: 0.9rem;
-  color: #dddddd;
+  padding: 5px 18px;
+  width: 100%;
+  max-width: 300px;
+  transition: all 0.3s ease;
+  margin-left: 20px; /* Añadir margen izquierdo para moverlo más a la derecha */
 }
 
-.sidebar .profile .actions {
-  margin-top: 15px;
-}
-
-.sidebar .nav-item {
-  margin: 5px 0;
-}
-
-.sidebar .nav-link {
-  color: #ffffff;
-  font-size: 0.95rem;
-  padding: 10px;
-  transition: background-color 0.3s ease, transform 0.3s ease, font-size 0.3s ease;
-}
-
-.sidebar .nav-link:hover {
-  background-color: #343a40;
-  border-radius: 5px;
-  transform: scale(1.1);
-  font-size: 1.05rem;
-}
-
-.sidebar .collapse .nav-link {
+.search-input::placeholder {
+  color: #a6a6a6;
   font-size: 0.85rem;
 }
 
-.toggle-sidebar {
-  position: absolute;
-  bottom: 5px;
-  left: 30px;
+.search-input:focus {
+  outline: none;
+  box-shadow: none;
+  background-color: #3a3a3a;
+}
+
+.bi-bell {
   cursor: pointer;
-  color: #ffffff;
+  font-size: 1rem;
+  margin-left: 10px;
 }
 
-.rotate-icon {
-  transition: transform 0.3s ease;
+.dropdown-menu {
+  min-width: 180px;
 }
 
-.rotate {
-  transform: rotate(180deg);
+.dropdown-toggle img {
+  width: 28px;
+  height: 28px;
 }
 
-.collapse-content {
-  display: none;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
+.dropdown-toggle {
+  font-size: 0.9rem;
 }
 
-.collapse-content.show {
-  display: block;
-}
-
-.sidebar.collapsed {
-  width: 50px;
-}
-
-.sidebar.collapsed .profile-info, 
-.sidebar.collapsed .nav-item span {
-  display: none;
-}
-
-.sidebar.collapsed .nav-link {
-  justify-content: flex-start;
-  font-size: 25px;
-  padding-left: 5px;
-}
-
-.sidebar.collapsed .profile {
-  display: none;
-}
-
-/* Estilos responsivos */
-
-/* Tablets y pantallas medianas */
-@media (max-width: 991px) {
-  .sidebar {
-    width: 200px; /* Ajusta el ancho para tablets */
+/* Responsive - Para pantallas muy pequeñas (móviles) */
+@media (max-width: 576px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    top: 10px;
   }
 
-  .sidebar.collapsed {
-    width: 50px; /* Menú colapsado en tablets */
+  .search-input {
+    width: 80%;  /* Ajusta el tamaño de la búsqueda */
+    margin: 10px 0;
   }
 
-  .sidebar .nav-link {
-    font-size: 0.9rem; /* Reduce el tamaño del texto */
+  .navbar-brand {
+    font-size: 1.2rem;
+    text-align: center;
   }
 
-  .sidebar .profile img {
-    width: 60px; /* Reduce la imagen de perfil */
-    height: 60px;
+  .bi-bell {
+    font-size: 1.2rem;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .dropdown-toggle {
+    font-size: 1rem;
   }
 }
 
-/* Teléfonos y pantallas pequeñas */
-@media (max-width: 767px) {
-  .sidebar {
-    width: 100%; /* Barra lateral ocupa todo el ancho */
-    height: auto; /* Ajusta la altura */
-    flex-wrap: wrap; /* Permite que los elementos se ajusten */
+/* Responsive - Para pantallas pequeñas (tabletas) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
   }
 
-  .sidebar.collapsed {
-    width: 100%; /* Menú colapsado también ocupa todo el ancho */
+  .search-input {
+    width: 60%; /* Ajusta el tamaño de la búsqueda */
+    margin-left: 20px; /* Mueve más a la derecha */
   }
 
-  .sidebar .profile {
-    text-align: center; /* Centra la información del perfil */
+  .bi-bell {
+    font-size: 1.2rem;
+    margin-left: 15px;
   }
 
-  .sidebar .profile img {
-    margin: 0 auto; /* Centra la imagen */
+  .dropdown-toggle {
+    font-size: 1rem;
+  }
+}
+
+/* Responsive - Para pantallas medianas (escritorios pequeños) */
+@media (max-width: 992px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 30px;
   }
 
-  .sidebar .nav-link {
-    text-align: center; /* Centra los enlaces */
-    font-size: 0.85rem; /* Ajusta el tamaño del texto */
+  .search-input {
+    max-width: 250px;
+    margin-left: 20px; /* Mueve más a la derecha */
   }
 
-  .toggle-sidebar {
-    bottom: 10px;
-    left: 50%; /* Centra el botón de colapso */
-    transform: translateX(-50%);
+  .bi-bell {
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
+
+  .dropdown-toggle {
+    font-size: 1rem;
+  }
+}
+
+/* Responsive - Para pantallas grandes (escritorios y pantallas grandes) */
+@media (min-width: 1200px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 40px;
+  }
+
+  .search-input {
+    max-width: 350px;
+    margin-left: 20px; /* Mueve más a la derecha */
+  }
+
+  .bi-bell {
+    font-size: 1.2rem;
+    margin-left: 15px;
+  }
+
+  .dropdown-toggle {
+    font-size: 1.1rem;
   }
 }

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-declare let L: any; 
+import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
+declare let L: any;
 
 @Component({
   selector: 'app-tourist-registration',
@@ -7,6 +7,8 @@ declare let L: any;
   styleUrls: ['./tourist-registration.component.scss'],
 })
 export class TouristRegistrationComponent implements OnInit {
+  constructor(private renderer: Renderer2, private elementRef: ElementRef) {}
+
   ngOnInit(): void {
     // Inicializar el mapa
     const map = L.map('map').setView([0, 0], 2); // Vista inicial
@@ -22,8 +24,24 @@ export class TouristRegistrationComponent implements OnInit {
     map.on('click', (e: any) => {
       const lat = e.latlng.lat.toFixed(6); // Latitud con 6 decimales
       const lng = e.latlng.lng.toFixed(6); // Longitud con 6 decimales
-      const input = document.getElementById('ubicacion') as HTMLInputElement;
-      input.value = `${lat}, ${lng}`;
+      this.updateLocationInput(`${lat}, ${lng}`);
     });
+  }
+
+  // Método para actualizar el valor del campo de ubicación de manera segura
+  updateLocationInput(value: string): void {
+    const sanitizedValue = this.sanitizeInput(value); // Sanitizar el valor
+    const locationInput = this.elementRef.nativeElement.querySelector(
+      '#ubicacion'
+    ) as HTMLInputElement;
+
+    if (locationInput) {
+      this.renderer.setProperty(locationInput, 'value', sanitizedValue);
+    }
+  }
+
+  // Sanitización básica para evitar inyecciones
+  sanitizeInput(input: string): string {
+    return input.replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
 }

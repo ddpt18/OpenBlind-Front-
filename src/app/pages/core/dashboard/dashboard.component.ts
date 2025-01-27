@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Renderer2, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,7 +6,9 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-  isDropdownOpen: boolean = false; // Variable para controlar el estado del dropdown
+  isDropdownOpen: boolean = false; // Estado del dropdown
+
+  constructor(private renderer: Renderer2, private elementRef: ElementRef) {}
 
   // Alternar el estado del dropdown al hacer clic en el botón
   toggleDropdown(): void {
@@ -16,14 +18,17 @@ export class DashboardComponent {
   // Cerrar el dropdown si se hace clic fuera de él
   @HostListener('document:click', ['$event'])
   closeDropdown(event: Event): void {
-    const dropdownButton = document.getElementById('dropdownUsuarios');
-    const dropdownMenu = document.querySelector('.dropdown-menu');
     const target = event.target as HTMLElement;
 
-    if (dropdownButton && dropdownMenu) {
-      if (!dropdownButton.contains(target) && !dropdownMenu.contains(target)) {
-        this.isDropdownOpen = false;
-      }
+    // Verifica si el clic fue fuera del componente actual
+    if (!this.elementRef.nativeElement.contains(target)) {
+      this.isDropdownOpen = false;
     }
+  }
+
+  // Método adicional para generar un valor seguro en caso de necesitarlo
+  sanitizeInput(input: string): string {
+    const sanitized = input.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    return sanitized;
   }
 }

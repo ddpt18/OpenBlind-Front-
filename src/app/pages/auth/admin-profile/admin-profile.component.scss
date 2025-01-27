@@ -4,7 +4,7 @@
   height: 120px;
   border: 4px solid #01072b;
   object-fit: cover;
-  margin-top: 20px;
+  margin-top: 40px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
@@ -15,7 +15,7 @@
 
 /* Botón */
 .btn-gradient {
-  background: linear-gradient(to right, #010429, #13003f);
+  background: linear-gradient(to right, #010429, #030029);
   color: #fff;
   padding: 10px 20px;
   border-radius: 30px;
@@ -28,7 +28,7 @@
 }
 
 .btn-gradient:hover {
-  background: linear-gradient(to right, #bcd5ff, #d8c4ee);
+  background: linear-gradient(to right, #031c4b, #5c93e6);
 }
 
 /* Icono dentro del botón */
@@ -51,12 +51,38 @@
 .list-group-item {
   border: none;
   font-size: 16px;
+  position: relative; /* Necesario para el separador */
+  padding-bottom: 20px; /* Espacio para la línea */
+}
+
+.list-group-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px; /* Grosor de la línea */
+  background-color: #ffffff; /* Color de la línea */
+}
+
+.list-group-item:last-child::after {
+  display: none; /* Quita la línea después del último elemento */
 }
 
 .list-group-item.bg-primary {
   font-weight: bold;
-  background-color: #6a11cb;
+  background-color: #115bcb;
   color: #fff;
+}
+
+.list-group-item.custom-bg-dark {
+  background-color: #010a16; /* Azul más oscuro */
+  color: #ffffff; /* Blanco para texto legible */
+  border: none; /* Opcional: elimina bordes si no se ajustan al diseño */
+}
+
+.list-group-item.custom-bg-dark strong {
+  color: #bbdefb; /* Azul claro para destacar títulos */
 }
 
 /* Ajustes para dispositivos pequeños */
