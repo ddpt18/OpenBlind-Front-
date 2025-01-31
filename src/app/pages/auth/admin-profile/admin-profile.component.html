@@ -2,8 +2,9 @@
   <!-- Fila 1: Imagen de Perfil -->
   <div class="row justify-content-center">
     <div class="col-10 col-md-4 text-center">
-      <img src="assets/images/descarga (1).jpeg" class="img-fluid profile-img rounded-circle shadow-lg" alt="Imagen de perfil">
-      <button class="btn btn-gradient mt-3">
+      <img [src]="'assets/images/descarga (1).jpeg'" class="img-fluid profile-img rounded-circle shadow-lg" alt="Imagen de perfil">
+      <!-- Botón con Off-Canvas -->
+      <button class="btn btn-gradient mt-3" data-bs-toggle="offcanvas" data-bs-target="#profileMenu" aria-controls="profileMenu">
         <i class="fas fa-pencil-alt btn-icon"></i> Editar Perfil
       </button>
     </div>
@@ -40,5 +41,35 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- Off-canvas Menu -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="profileMenu" aria-labelledby="profileMenuLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="profileMenuLabel">Editar Perfil</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <!-- Aquí colocarías los campos de edición del perfil -->
+    <form>
+      <div class="mb-3">
+        <label for="inputNombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="inputNombre" [(ngModel)]="profile.nombres" name="nombre">
+      </div>
+      <div class="mb-3">
+        <label for="inputApellido" class="form-label">Apellido</label>
+        <input type="text" class="form-control" id="inputApellido" [(ngModel)]="profile.apellidos" name="apellido">
+      </div>
+      <div class="mb-3">
+        <label for="inputEmail" class="form-label">Email</label>
+        <input type="email" class="form-control" id="inputEmail" [(ngModel)]="profile.email" name="email">
+      </div>
+      <div class="mb-3">
+        <label for="inputTelefono" class="form-label">Teléfono</label>
+        <input type="tel" class="form-control" id="inputTelefono" [(ngModel)]="profile.telefono" name="telefono">
+      </div>
+      <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    </form>
   </div>
 </div>
