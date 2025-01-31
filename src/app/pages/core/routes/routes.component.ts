@@ -57,7 +57,7 @@ export class RoutesComponent implements AfterViewInit{
     });
   }
 
-  onSubmit() {
+  onSubmit(): void {
     if (this.routeForm.valid && this.routeCoordinates.length > 0) {
       const routeData: Ruta = this.routeForm.value;
       routeData.coordinates = this.routeCoordinates; // Agregar las coordenadas de la ruta
@@ -84,6 +84,21 @@ export class RoutesComponent implements AfterViewInit{
     } else {
       this.showNotification('Formulario inválido o ruta no dibujada', 'error');
     }
+  }
+
+  toggleFullScreen(): void {
+    const mapContainer = document.getElementById('map-container');
+    if (mapContainer) {
+      if (!document.fullscreenElement) {
+        mapContainer.requestFullscreen().catch((err) => console.log(err));
+      } else {
+        document.exitFullscreen();
+      }
+    }
+  }
+
+  goBack(): void {
+    window.history.back();
   }
 
   private sanitizeInput(route: Ruta): Ruta {
