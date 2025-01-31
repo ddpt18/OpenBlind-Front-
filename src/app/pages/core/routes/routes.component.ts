@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { Ruta } from '../../models/route.model';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import * as L from 'leaflet';  // Importar Leaflet
 
 
 
@@ -9,9 +10,10 @@ import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
   templateUrl: './routes.component.html',
   styleUrl: './routes.component.scss'
 })
-export class RoutesComponent {
+export class RoutesComponent implements AfterViewInit{
 
   routeForm: FormGroup;
+  map: L.Map | undefined;
 
   constructor(private fb: FormBuilder) {
     this.routeForm = this.fb.group({
@@ -21,26 +23,36 @@ export class RoutesComponent {
     });
   }
 
+  ngAfterViewInit(): void {
+    // Inicializar mapa
+    this.map = L.map('map').setView([0, 0], 2);  // Centrado por defecto
+
+    // Cargar el tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(this.map);
+  }
+
   onSubmit() {
     if (this.routeForm.valid) {
       const routeData: Ruta = this.routeForm.value;
 
-      // Ensure data is sanitized before saving
+      // Sanitizar entrada
       const sanitizedRoute = this.sanitizeInput(routeData);
 
-      // Retrieve existing routes from localStorage or initialize as empty
+      // Obtener rutas existentes desde localStorage o inicializar vacío
       const storedRoutes = JSON.parse(localStorage.getItem('routes') || '[]');
       
-      // Add the new route to the array
+      // Agregar la nueva ruta al array
       storedRoutes.push(sanitizedRoute);
       
-      // Save updated routes array to localStorage
+      // Guardar el array actualizado en localStorage
       localStorage.setItem('routes', JSON.stringify(storedRoutes));
       
-      // Optional: Notify user of success
+      // Notificar al usuario
       this.showNotification('Ruta guardada correctamente.', 'success');
       
-      // Reset the form after submission
+      // Restablecer el formulario después del envío
       this.routeForm.reset();
     } else {
       this.showNotification('Formulario inválido', 'error');

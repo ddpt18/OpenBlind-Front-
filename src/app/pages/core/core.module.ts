@@ -27,7 +27,7 @@ import { TouristRegistrationComponent } from './tourist-registration/tourist-reg
     CommonModule,
     CoreRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ]
 })
 export class CoreModule { }
