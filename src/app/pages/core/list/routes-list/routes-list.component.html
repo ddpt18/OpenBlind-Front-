@@ -1,5 +1,3 @@
-
-
 <div class="container">
   <div class="header">
     <p class="d-inline-flex gap-1">
@@ -27,6 +25,16 @@
 
           <h5 class="card-title">Nombre del transporte de la ruta:</h5>
           <p class="card-text">{{ route.transportName }}</p>
+
+          <h5 class="card-title">Coordenadas de la ruta:</h5>
+          <p class="card-text">
+            <span *ngIf="route.coordinates && route.coordinates.length > 0">
+              Latitud: {{ route.coordinates[0].lat }}, Longitud: {{ route.coordinates[0].lng }}
+            </span>
+            <span *ngIf="!route.coordinates || route.coordinates.length === 0">
+              No hay coordenadas disponibles.
+            </span>
+          </p>
 
           <div class="buttons">
             <a href="/core/routes" class="btn btn-sm btn-success animated-button">Editar</a>
