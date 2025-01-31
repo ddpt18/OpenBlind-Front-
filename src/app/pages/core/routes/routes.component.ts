@@ -24,13 +24,18 @@ export class RoutesComponent implements AfterViewInit{
   }
 
   ngAfterViewInit(): void {
-    // Inicializar mapa
-    this.map = L.map('map').setView([0, 0], 2);  // Centrado por defecto
+    // Inicializar mapa y centrar en Quito (latitud: -0.1807, longitud: -78.4678)
+    this.map = L.map('map').setView([-0.1807, -78.4678], 13);  // 13 es el nivel de zoom (puedes ajustarlo)
 
-    // Cargar el tile layer
+    // Cargar el tile layer (utilizando OpenStreetMap)
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(this.map);
+
+    // Opcional: Agregar un marcador en Quito
+    L.marker([-0.1807, -78.4678]).addTo(this.map)
+      .bindPopup('Quito, Ecuador')
+      .openPopup();
   }
 
   onSubmit() {
