@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Ruta } from '../../models/route.model';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 
 
 
@@ -11,49 +11,51 @@ import { NgForm } from '@angular/forms';
 })
 export class RoutesComponent {
 
-  route: Ruta = {
-    name: '',
-    location: '',
-    transportName: ''
-  };
+  routeForm: FormGroup;
 
-  constructor() {}
+  constructor(private fb: FormBuilder) {
+    this.routeForm = this.fb.group({
+      name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
+      location: ['', [Validators.required, Validators.minLength(3)]],
+      transportName: ['', [Validators.required, Validators.minLength(3)]]
+    });
+  }
 
-  /**
-   * Maneja el envío del formulario.
-   * @param form NgForm
-   */
-  onSubmit(form: NgForm): void {
-    if (form.valid) {
-      const sanitizedRoute = this.sanitizeInput(this.route);
-      this.saveToLocalStorage(sanitizedRoute);
-      console.log('Ruta registrada y guardada en localStorage:', sanitizedRoute);
-      alert('Ruta registrada correctamente.');
-      form.reset(); // Limpia el formulario después de enviar
+  onSubmit() {
+    if (this.routeForm.valid) {
+      const routeData: Ruta = this.routeForm.value;
+
+      // Ensure data is sanitized before saving
+      const sanitizedRoute = this.sanitizeInput(routeData);
+
+      // Retrieve existing routes from localStorage or initialize as empty
+      const storedRoutes = JSON.parse(localStorage.getItem('routes') || '[]');
+      
+      // Add the new route to the array
+      storedRoutes.push(sanitizedRoute);
+      
+      // Save updated routes array to localStorage
+      localStorage.setItem('routes', JSON.stringify(storedRoutes));
+      
+      // Optional: Notify user of success
+      this.showNotification('Ruta guardada correctamente.', 'success');
+      
+      // Reset the form after submission
+      this.routeForm.reset();
     } else {
-      console.warn('Formulario no válido');
-      alert('Por favor, completa todos los campos del formulario.');
+      this.showNotification('Formulario inválido', 'error');
     }
   }
 
-  /**
-   * Método para sanitizar los datos del formulario.
-   * @param route Ruta
-   * @returns Ruta sanitizada
-   */
   private sanitizeInput(route: Ruta): Ruta {
     return {
+      id: this.generateUniqueId(),
       name: this.escapeHtml(route.name.trim()),
       location: this.escapeHtml(route.location.trim()),
       transportName: this.escapeHtml(route.transportName.trim())
     };
   }
 
-  /**
-   * Escapa caracteres HTML peligrosos.
-   * @param input Cadena de texto
-   * @returns Cadena escapada
-   */
   private escapeHtml(input: string): string {
     const map: { [key: string]: string } = {
       '&': '&amp;',
@@ -65,26 +67,15 @@ export class RoutesComponent {
     return input.replace(/[&<>"']/g, (char) => map[char]);
   }
 
-  /**
-   * Guarda la información de la ruta en localStorage.
-   * @param route Ruta a guardar
-   */
-  private saveToLocalStorage(route: Ruta): void {
-    try {
-      const existingRoutes = this.getRoutesFromLocalStorage();
-      existingRoutes.push(route);
-      localStorage.setItem('routes', JSON.stringify(existingRoutes));
-    } catch (error) {
-      console.error('Error guardando en localStorage:', error);
-    }
+  private generateUniqueId(): string {
+    return Math.random().toString(36).substr(2, 9);
   }
 
-  /**
-   * Obtiene las rutas almacenadas en localStorage.
-   * @returns Array de rutas o un array vacío si no hay datos
-   */
-  private getRoutesFromLocalStorage(): Ruta[] {
-    const routes = localStorage.getItem('routes');
-    return routes ? JSON.parse(routes) : [];
+  private showNotification(message: string, type: 'success' | 'error'): void {
+    const notification = document.createElement('div');
+    notification.className = `alert alert-${type === 'success' ? 'success' : 'danger'}`;
+    notification.innerText = message;
+    document.body.appendChild(notification);
+    setTimeout(() => document.body.removeChild(notification), 3000);
   }
 }

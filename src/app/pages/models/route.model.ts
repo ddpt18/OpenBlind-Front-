@@ -1,6 +1,6 @@
 export interface Ruta {
-    name: string;
-    location: string;
-    transportName: string;
-  }
-  
+  id?: string; // Se agrega id opcional
+  name: string;
+  location: string;
+  transportName: string;
+}

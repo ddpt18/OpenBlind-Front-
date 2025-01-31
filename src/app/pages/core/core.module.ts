@@ -8,7 +8,7 @@ import { RoutesListComponent } from './list/routes-list/routes-list.component';
 import { PersonalizedMessageComponent } from './personalized-message/personalized-message.component';
 import { RoutesComponent } from './routes/routes.component';
 import { VoiceGuideComponent } from './voice-guide/voice-guide.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TouristRegistrationComponent } from './tourist-registration/tourist-registration.component';
 
 
@@ -26,7 +26,8 @@ import { TouristRegistrationComponent } from './tourist-registration/tourist-reg
   imports: [
     CommonModule,
     CoreRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class CoreModule { }
