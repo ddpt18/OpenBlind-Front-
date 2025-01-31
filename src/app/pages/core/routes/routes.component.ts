@@ -2,6 +2,7 @@ import { AfterViewInit, Component } from '@angular/core';
 import { Ruta } from '../../models/route.model';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import * as L from 'leaflet';  // Importar Leaflet
+import 'leaflet.pm';  // Importar leaflet.pm para habilitar los controles
 
 
 
@@ -14,6 +15,8 @@ export class RoutesComponent implements AfterViewInit{
 
   routeForm: FormGroup;
   map: L.Map | undefined;
+  drawnItems: L.FeatureGroup; // Para manejar los elementos dibujados en el mapa
+  routeCoordinates: L.LatLng[] = []; // Almacenar las coordenadas de la ruta dibujada
 
   constructor(private fb: FormBuilder) {
     this.routeForm = this.fb.group({
@@ -21,6 +24,9 @@ export class RoutesComponent implements AfterViewInit{
       location: ['', [Validators.required, Validators.minLength(3)]],
       transportName: ['', [Validators.required, Validators.minLength(3)]]
     });
+
+    // Inicializar la capa para los elementos dibujados
+    this.drawnItems = new L.FeatureGroup();
   }
 
   ngAfterViewInit(): void {
@@ -32,15 +38,29 @@ export class RoutesComponent implements AfterViewInit{
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(this.map);
 
-    // Opcional: Agregar un marcador en Quito
-    L.marker([-0.1807, -78.4678]).addTo(this.map)
-      .bindPopup('Quito, Ecuador')
-      .openPopup();
+    // Habilitar el control de dibujo
+    this.map.pm.addControls({
+      position: 'topleft',
+      drawPolygon: false,
+      drawMarker: false,
+      drawPolyline: true // Habilitar solo el dibujo de líneas
+    });
+
+    // Agregar la capa de elementos dibujados al mapa
+    this.map.addLayer(this.drawnItems);
+
+    // Manejar el evento de la creación de la ruta
+    this.map.on('pm:create', (event: any) => {
+      const layer = event.layer;
+      this.routeCoordinates = layer.getLatLngs(); // Obtener las coordenadas
+      this.drawnItems.addLayer(layer); // Agregar al mapa
+    });
   }
 
   onSubmit() {
-    if (this.routeForm.valid) {
+    if (this.routeForm.valid && this.routeCoordinates.length > 0) {
       const routeData: Ruta = this.routeForm.value;
+      routeData.coordinates = this.routeCoordinates; // Agregar las coordenadas de la ruta
 
       // Sanitizar entrada
       const sanitizedRoute = this.sanitizeInput(routeData);
@@ -59,8 +79,10 @@ export class RoutesComponent implements AfterViewInit{
       
       // Restablecer el formulario después del envío
       this.routeForm.reset();
+      this.drawnItems.clearLayers(); // Limpiar la capa de rutas dibujadas
+      this.routeCoordinates = []; // Limpiar las coordenadas
     } else {
-      this.showNotification('Formulario inválido', 'error');
+      this.showNotification('Formulario inválido o ruta no dibujada', 'error');
     }
   }
 
@@ -69,7 +91,8 @@ export class RoutesComponent implements AfterViewInit{
       id: this.generateUniqueId(),
       name: this.escapeHtml(route.name.trim()),
       location: this.escapeHtml(route.location.trim()),
-      transportName: this.escapeHtml(route.transportName.trim())
+      transportName: this.escapeHtml(route.transportName.trim()),
+      coordinates: route.coordinates // Almacenar las coordenadas de la ruta
     };
   }
 
